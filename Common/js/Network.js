@@ -8,6 +8,9 @@ define([
 
 	var Initialize = function() {
 		console.log("Network up");
+		
+		var Buffer = PacketBuffer.Create(12);
+		Buffer.write(1000, Buffer.VarType["ushort"]);
 	}
 	
 	return {
