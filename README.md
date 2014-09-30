@@ -30,6 +30,10 @@ Welcome to the home of the Aero WebClients that are currently being refactored.
 
 ### What do I learn? ###
 
+Google styling guidelines are good styling guidelines
+
+* https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml
+
 This website goes over the basic best practices of writing good JavaScript.
 
 * http://jstherightway.org/
@@ -66,3 +70,7 @@ We will be using JSON to transfer data between the Dataceneter and the WebClient
 We use Bootstrap as a basic framework for how to design good looking, easy websites. Learn about Bootstrap here
 
 * http://getbootstrap.com/css/
+
+MVC is important in how we're going to design our web applications. Read more about how Backbone + RequireJS + MVC = success
+
+* http://www.integralist.co.uk/posts/mvc-in-javascript-with-backbone-js/
