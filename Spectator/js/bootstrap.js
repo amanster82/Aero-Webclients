@@ -4,7 +4,10 @@ require.config({
 		// Load all of the common modules
 		jquery: '../../Common/js/libs/jquery/jquery',
 		underscore: '../../Common/js/libs/underscore/underscore',
-		backbone: '../../Common/js/libs/backbone/backbone'
+		backbone: '../../Common/js/libs/backbone/backbone',
+		Network: '../../Common/js/Network',
+		PacketBuffer: '../../Common/js/PacketBuffer',
+		Packets: '../../Common/js/Packets'
 	}
 });
 

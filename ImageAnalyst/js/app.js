@@ -2,14 +2,18 @@ define([
 'jquery',
 'underscore',
 'backbone',
-], function($, _, Backbone){
+'Network',
+], function($, _, Backbone, Network){
 
-	var initialize = function () {
+	var Initialize = function () {
+	
+		Network.Initialize();
+		
 		console.log("All systems go");
 	}
 	
 	// Map public API functions to internal functions
 	return {
-		Initialize: initialize
+		Initialize: Initialize
 	};
 });
