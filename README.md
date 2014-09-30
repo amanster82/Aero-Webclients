@@ -30,6 +30,10 @@ Welcome to the home of the Aero WebClients that are currently being refactored.
 
 ### What do I learn? ###
 
+This website goes over the basic best practices of writing good JavaScript.
+
+* http://jstherightway.org/
+
 The Mozilla Developer Network outlines the complete standards for JavaScript, and will explain every function that exists.
 
 * https://developer.mozilla.org/en-US/
