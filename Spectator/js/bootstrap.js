@@ -1,0 +1,18 @@
+require.config({
+	baseUrl: "js/", // Base directory for this application
+	paths: {
+		// Load all of the common modules
+		jquery: '../../Common/js/libs/jquery/jquery',
+		underscore: '../../Common/js/libs/underscore/underscore',
+		backbone: '../../Common/js/libs/backbone/backbone'
+	}
+});
+
+// Load our app once configuration is complete
+require([
+	// app.js will be loaded and passed as the object APP
+	'app',
+], function(App){
+	// App entry point
+	App.Initialize();
+});
