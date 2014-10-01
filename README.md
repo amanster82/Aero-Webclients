@@ -26,7 +26,7 @@ Welcome to the home of the Aero WebClients that are currently being refactored.
 
 * Paul at p.hunter.eng@gmail.com
 * Chris at chrishampu@outlook.com
-* Simon at sdiemert@gmail.com
+* Simon at simon.diemert@gmail.com
 
 ### What do I learn? ###
 
