@@ -1,8 +1,8 @@
 define([
-'jquery',
-'underscore',
-'backbone',
-'PacketBuffer',
+	'jquery',
+	'underscore',
+	'backbone',
+	'PacketBuffer',
 ], function($, _, Backbone, PacketBuffer){
 
 	/**

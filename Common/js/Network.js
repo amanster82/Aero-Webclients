@@ -4,7 +4,9 @@ define([
 	'backbone',
 	'PacketBuffer',
 	'PacketFactory',
-], function($, _, Backbone, PacketBuffer, PacketFactory) {
+	'ConnectionModel',
+	'ConnectionView'
+], function($, _, Backbone, PacketBuffer, PacketFactory, ConnectionModel, ConnectionView) {
 
 	/**
 	  * Internal properties
@@ -14,8 +16,8 @@ define([
 	var ServerIP = "127.0.0.1",
 		ServerPort = "24000",
 		ServerSocket,
-		IsConnected,
-		ClientType;
+		ClientType,
+		Connection;
 	
 	/**
 	  * Maps named client types to their integer values
@@ -39,7 +41,13 @@ define([
 	  * @export
 	  */	
 	var Initialize = function() {
-		console.log("Network up");
+		Connection = new ConnectionModel();
+
+		var ConnectView = new ConnectionView({ model:Connection });
+
+		Connection.set({connected: false});
+
+		console.log("Network initialized");
 	};
 	
 	/**
@@ -48,8 +56,8 @@ define([
 	  */
 	var SocketFuncs = {
 		onopen: function() {
-			IsConnected = true;
-			
+			Connection.set({connected: true});
+
 			var pkt = PacketFactory.Create("PacketClientType");
 			pkt.serialize(ClientTypeEnum["ImageAnalyst"]);
 		},
@@ -59,7 +67,7 @@ define([
 		},
 		
 		onclose: function() {
-		
+			Connection.set({connected: false});
 		}
 	};	
 	
@@ -83,7 +91,10 @@ define([
 	  * @export
 	  */
 	var Send = function(packet) {
-	
+		if(packet !== undefined)
+		{
+			ServerSocket.send(packet);
+		}
 	};
 	
 	/**
