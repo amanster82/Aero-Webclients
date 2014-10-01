@@ -7,7 +7,7 @@ require.config({
 		backbone: '../../Common/js/libs/backbone/backbone',
 		Network: '../../Common/js/Network',
 		PacketBuffer: '../../Common/js/PacketBuffer',
-		Packets: '../../Common/js/Packets'
+		PacketFactory: '../../Common/js/PacketFactory'
 	}
 });
 

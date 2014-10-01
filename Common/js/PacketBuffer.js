@@ -1,10 +1,14 @@
 define([
-'jquery',
-'underscore',
-'backbone',
-'Packets',
-], function($, _, Backbone, Packets){
+	'jquery',
+	'underscore',
+	'backbone',
+], function($, _, Backbone){
 
+	/**
+	  * PacketBuffer is an interface to the browsers built-in DataView and ArrayBuffer
+	  * structures. It provides easy read/write access through TCP-like serialization
+	  * @constructor
+	  */
 	var PacketBuffer = function(data) {
 		this.cursor = 0;
 		this.writable = false;
@@ -24,6 +28,10 @@ define([
 		}
 	};	
 
+	/**
+	 * Enum to map string types to sizes
+	 * @enum
+	 */
 	PacketBuffer.prototype.VarType = Object.freeze({
 		"char" : { size : 1, name : "char" },
 		"uchar" : { size : 1, name : "uchar" },
@@ -34,6 +42,10 @@ define([
 		"float" : { size : 4, name : "float" }
 	});
 
+	/**
+	  * Writes a variable of a certain size into the buffer
+	  * @export
+	  */
 	PacketBuffer.prototype.write = function(variable, type) {
 		if(this.writable == false)
 			return false;
@@ -73,7 +85,10 @@ define([
 		}
 	};
 
-
+	/**
+	  * Returns a value at a certain offset without modifying the read position of the buffer
+	  * @export
+	  */
 	PacketBuffer.prototype.peek = function(offset, type, amount) {
 		switch(type.name)
 		{
@@ -119,14 +134,27 @@ define([
 		}
 	};
 	
+	/**
+	  * Sends this PacketBuffer through the WebSocket network
+	  * @export
+	  */
 	PacketBuffer.prototype.send = function() {
 		// TODO: Tie in Networking socket sending function
 	};
 	
+	/**
+	  * Creates a new PacketBuffer by either supplying a size for
+	  * the new buffer, or an object containing data to serialize
+	  * @export
+	  */
 	var Create = function (data) {
 		return new PacketBuffer(data);
 	}
 
+	/**
+	  * API Mapping
+	  * @return
+	  */
 	return {
 		Create: Create
 	};
