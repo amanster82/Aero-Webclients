@@ -2,7 +2,8 @@ define([
 'jquery',
 'underscore',
 'backbone',
-], function($, _, Backbone){
+'PacketBuffer',
+], function($, _, Backbone, PacketBuffer){
 
 	/**
 	  * Factory method. Creates a base packet and then extends it with the requested packets
@@ -12,7 +13,8 @@ define([
 	Create = function(packet) {
 		var pkt = new Packet();
 		
-		_.extend(pkt, PacketMapping[packet]);		
+		if(packet !== undefined)
+			_.extend(pkt, PacketMapping[packet]);		
 		
 		return pkt;
 	}
@@ -29,7 +31,7 @@ define([
 			console.log("Invalid packet created");
 		}
 		
-		this.serialize = function(buffer) {
+		this.serialize = function() {
 			console.log("Serializing invalid packet");
 		}
 	};
@@ -46,8 +48,30 @@ define([
 			console.log("Received JSON packet");
 		},
 		
-		serialize: function(buffer) {
+		serialize: function() {
 			console.log("Serializing JSON packet");
+		}
+	};
+	
+	/**
+	  * Used to inform the DC what type of client we are
+	  * @extends
+	  */
+	var PacketClientType = {
+		OpCode: 0x105,
+		Name: "PacketClientType",
+		Size: 3,
+		Buffer: undefined,
+		
+		recv: function() {
+		
+		},
+		
+		serialize: function(clientType) {
+			this.Buffer = PacketBuffer.Create(this.Size);
+
+			this.Buffer.write(this.OpCode, this.Buffer.VarType["ushort"]);
+			this.Buffer.write(clientType, this.Buffer.VarType["uchar"]);
 		}
 	};
 		
@@ -56,7 +80,8 @@ define([
 	  * @struct
 	  */
 	var PacketMapping = {
-		"PacketJSONPayload" : PacketJSONPayload
+		"PacketJSONPayload" : PacketJSONPayload,
+		"PacketClientType" : PacketClientType
 	};
 
 	/**

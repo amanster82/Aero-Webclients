@@ -4,7 +4,7 @@ define([
 	'backbone',
 	'PacketBuffer',
 	'PacketFactory',
-], function($, _, Backbone, PacketBuffer, PacketFactory){
+], function($, _, Backbone, PacketBuffer, PacketFactory) {
 
 	/**
 	  * Internal properties
@@ -21,7 +21,7 @@ define([
 	  * Maps named client types to their integer values
 	  * @enum
 	  */
-	var client_type_enum = {
+	var ClientTypeEnum = {
 		"Unknown" : -1,
 		"DC" : 0,
 		"AntennaTracker" : 1,
@@ -48,7 +48,10 @@ define([
 	  */
 	var SocketFuncs = {
 		onopen: function() {
-		
+			IsConnected = true;
+			
+			var pkt = PacketFactory.Create("PacketClientType");
+			pkt.serialize(ClientTypeEnum["ImageAnalyst"]);
 		},
 		
 		onmessage: function(msg) {
