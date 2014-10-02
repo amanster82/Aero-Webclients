@@ -8,6 +8,7 @@ define([
 	var Initialize = function () {
 	
 		Network.Initialize();
+		Network.ConnectToServer("SystemAnalyst");
 		
 		console.log("All systems go");
 	}

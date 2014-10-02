@@ -56,18 +56,27 @@ define([
 	  */
 	var SocketFuncs = {
 		onopen: function() {
+			console.log("Connected to server");
+
 			Connection.set({connected: true});
 
 			var pkt = PacketFactory.Create("PacketClientType");
-			pkt.serialize(ClientTypeEnum["ImageAnalyst"]);
+			pkt.serialize(ClientTypeEnum[ClientType]);
+
+			Send(pkt);
 		},
 		
 		onmessage: function(msg) {
-		
+			// Handle packet receive here
 		},
 		
 		onclose: function() {
-			Connection.set({connected: false});
+			if(Connection.get("connected") == false) {
+				console.log("Failed to connect to server");
+			} else {
+				console.log("Connection to server closed");
+				Connection.set({connected: false});
+			}
 		}
 	};	
 	
@@ -76,14 +85,16 @@ define([
 	  * @export
 	  */
 	var ConnectToServer = function(clientType, host) {
-	
+		ClientType = clientType || "Unknown";
+
 		var destination = host || ServerIP; // Custom host can be provided
 	
 		ServerSocket = new WebSocket("ws://"+destination+":"+ServerPort);
-	
+		ServerSocket.binaryType = "arraybuffer";
+
 		_.extend(ServerSocket, SocketFuncs);
 
-		console.log("connecting to server");
+		console.log("Connecting to server");
 	};
 	
 	/**
@@ -91,9 +102,9 @@ define([
 	  * @export
 	  */
 	var Send = function(packet) {
-		if(packet !== undefined)
+		if(packet !== undefined && packet.Buffer.buffer instanceof ArrayBuffer)
 		{
-			ServerSocket.send(packet);
+			ServerSocket.send(packet.Buffer.buffer); // The chain..
 		}
 	};
 	

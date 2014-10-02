@@ -8,6 +8,7 @@ define([
 	var Initialize = function () {
 	
 		Network.Initialize();
+		Network.ConnectToServer("Spectator");
 		
 		console.log("All systems go");
 	}

@@ -8,6 +8,7 @@ define([
 	var Initialize = function () {
 	
 		Network.Initialize();
+		Network.ConnectToServer("ImageAnalyst");
 		
 		console.log("All systems go");
 	}
