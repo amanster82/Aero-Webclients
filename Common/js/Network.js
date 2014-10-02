@@ -126,7 +126,7 @@ define([
 		// Sanity checks
 		if(packet !== undefined && packet.Buffer.getBuffer() instanceof ArrayBuffer)
 		{
-			ServerSocket.send(packet.Buffer.getBuffer); // The chain..
+			ServerSocket.send(packet.Buffer.getBuffer()); // The chain..
 		}
 	};
 	

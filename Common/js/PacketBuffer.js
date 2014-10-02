@@ -4,7 +4,6 @@ define([
 	'backbone',
 ], function($, _, Backbone){
 
-
 	/**
 	  * PacketBuffer is an interface to the browsers built-in DataView and ArrayBuffer
 	  * structures. It provides easy read/write access through TCP-like serialization
