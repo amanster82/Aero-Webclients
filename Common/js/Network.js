@@ -81,27 +81,49 @@ define([
 	};	
 	
 	/**
-	  * Connects to the Datacenter server
+	  * Initializes a connection to the Datacenter server
 	  * @export
 	  */
 	var ConnectToServer = function(clientType, host) {
+		if(Connection.get("connected") == true)
+		{
+			console.log("Error: Already connected");
+			return;
+		}
+
+		// Sanity checks
 		ClientType = clientType || "Unknown";
+		host = host || ServerIP; // Custom host can be provided
 
-		var destination = host || ServerIP; // Custom host can be provided
-	
-		ServerSocket = new WebSocket("ws://"+destination+":"+ServerPort);
-		ServerSocket.binaryType = "arraybuffer";
-
-		_.extend(ServerSocket, SocketFuncs);
+		CreateSocket("ws://"+host+":"+ServerPort);
 
 		console.log("Connecting to server");
 	};
+
+	/**
+	  * Creates a new WebSocket to the specified address
+	  * @private
+	  */
+	var CreateSocket = function(address)
+	{
+		ServerSocket = new WebSocket(address);
+		ServerSocket.binaryType = "arraybuffer";
+
+		_.extend(ServerSocket, SocketFuncs);
+	}
 	
 	/**
 	  * Sends a packet to a connected server
 	  * @export
 	  */
 	var Send = function(packet) {
+		if(Connection.get("connected") == false)
+		{
+			console.log("Error: Cannot send packet, socket is not connected");
+			return;
+		}
+
+		// Sanity checks
 		if(packet !== undefined && packet.Buffer.buffer instanceof ArrayBuffer)
 		{
 			ServerSocket.send(packet.Buffer.buffer); // The chain..

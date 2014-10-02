@@ -15,7 +15,7 @@ define([
 	
 		if(typeof data === 'number')
 		{
-			this.packetLength = data;
+			this.packetLength = data; // Data is a packet length here
 			this.buffer = new ArrayBuffer(this.packetLength);
 			this.data = new DataView(this.buffer);
 			this.writable = true;
@@ -135,11 +135,11 @@ define([
 	};
 	
 	/**
-	  * Sends this PacketBuffer through the WebSocket network
+	  * Returns the internal ArrayBuffer object
 	  * @export
 	  */
-	PacketBuffer.prototype.send = function() {
-		// TODO: Tie in Networking socket sending function
+	PacketBuffer.prototype.get = function() {
+		return this.buffer;
 	};
 	
 	/**
