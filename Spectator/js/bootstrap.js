@@ -9,7 +9,12 @@ require.config({
 		PacketBuffer: '../../Common/js/PacketBuffer',
 		PacketFactory: '../../Common/js/PacketFactory',
 		ConnectionModel: '../../Common/js/models/ConnectionModel',
-		ConnectionView: '../../Common/js/views/ConnectionView'
+		ConnectionView: '../../Common/js/views/ConnectionView',
+		Logger: '../../Common/js/Logger',
+		LoggerCollection: '../../Common/js/collections/LoggerCollection',
+		LogMessageView: '../../Common/js/views/LogMessageView',
+		LoggerView: '../../Common/js/views/LoggerView',
+		LogMessageModel: '../../Common/js/models/LogMessageModel'
 	}
 });
 

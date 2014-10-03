@@ -13,7 +13,7 @@ define([
 	  * @properties
 	  * @private
 	  */
-	var ServerIP = "127.0.0.1",
+	var ServerIP = "192.168.0.132",
 		ServerPort = "24000",
 		ServerSocket,
 		ClientType,

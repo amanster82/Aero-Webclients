@@ -1,11 +1,15 @@
 define([
-'jquery',
-'underscore',
-'backbone',
-'Network',
-], function($, _, Backbone, Network){
+	'jquery',
+	'underscore',
+	'backbone',
+	'Network',
+	'Logger'
+], function($, _, Backbone, Network, Logger){
 
 	var Initialize = function () {
+	
+		Logger.Initialize();
+		Logger.Log({ message: "Logger initialized" });
 	
 		Network.Initialize();
 		Network.ConnectToServer("ImageAnalyst");
