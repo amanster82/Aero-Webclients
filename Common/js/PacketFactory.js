@@ -21,7 +21,7 @@ define([
 
 	/**
 	  * Base class for packets
-	  * @export
+	  * @protected
 	  */
 	var Packet = function() {
 		this.OpCode = undefined;
@@ -38,7 +38,7 @@ define([
 
 	/**
 	  * Used to transmit JSON data between the clients and server
-	  * @extends
+	  * @protected
 	  */
 	var PacketJSONPayload = {
 		OpCode: 0x120,
@@ -55,7 +55,7 @@ define([
 	
 	/**
 	  * Used to inform the DC what type of client we are
-	  * @extends
+	  * @protected
 	  */
 	var PacketClientType = {
 		OpCode: 0x105,
