@@ -13,7 +13,7 @@ define([
 	  * @properties
 	  * @private
 	  */
-	var ServerIP = "192.168.0.132",
+	var ServerIP = "127.0.0.1",
 		ServerPort = "24000",
 		ServerSocket,
 		ClientType,
@@ -60,10 +60,18 @@ define([
 
 			Connection.set({connected: true});
 
+			// Inform the DC what client we are
 			var pkt = PacketFactory.Create("PacketClientType");
 			pkt.serialize(ClientTypeEnum[ClientType]);
 
 			Send(pkt);
+
+			// Debug the JSON transmission
+			var json = "{ \"packet\": { \"id\": 1 } }";
+			var jspkt = PacketFactory.Create("PacketJSONPayload");
+			jspkt.serialize(json);
+
+			Send(jspkt);
 		},
 		
 		onmessage: function(msg) {

@@ -48,7 +48,18 @@ define([
 			console.log("Received JSON packet");
 		},
 		
-		serialize: function() {
+		serialize: function(payload) {
+			if(typeof payload !== 'string')
+				return;
+
+			var size = 2 + 2 + payload.length;
+
+			this.Buffer = PacketBuffer.Create(size);
+
+			this.Buffer.write(this.OpCode, this.Buffer.VarType["ushort"]);
+			this.Buffer.write(payload.length, this.Buffer.VarType["ushort"]);
+			this.Buffer.write(payload);
+
 			console.log("Serializing JSON packet");
 		}
 	};
@@ -60,7 +71,7 @@ define([
 	var PacketClientType = {
 		OpCode: 0x105,
 		Name: "PacketClientType",
-		Size: 3,
+		Size: 3, // Predefined size
 		Buffer: undefined,
 		
 		recv: function() {

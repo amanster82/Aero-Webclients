@@ -68,6 +68,10 @@ define([
 			this.getData = function() {
 				return data;
 			};
+
+			this.getPacketLength = function() {
+				return packetLength;
+			};
 		};
 
 		/**
@@ -94,6 +98,10 @@ define([
 			
 			if(typeof variable === 'number')
 			{
+				// Check for data overflow
+				if((this.getCursor() + type.size) > this.getPacketLength())
+					return false;
+
 				switch(type.size)
 				{
 					case 1:
@@ -121,6 +129,10 @@ define([
 			}
 			else if(typeof variable === 'string')
 			{
+				// Check for data overflow
+				if((this.getCursor() + variable.length) > this.getPacketLength())
+					return false;
+
 				for(var i = 0; i < variable.length; i++)
 					this.getData().setUint8(this.getCursor()+i, variable.charCodeAt(i), true);
 				this.setCursor( this.getCursor() + variable.length);
