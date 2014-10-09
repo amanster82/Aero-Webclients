@@ -125,6 +125,7 @@ define([
 							this.getData().setInt32(this.getCursor(), variable, true);
 						break;
 				}
+				
 				this.setCursor( this.getCursor() + type.size);
 			}
 			else if(typeof variable === 'string')

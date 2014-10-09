@@ -15,6 +15,8 @@ define([
 	  */
 	var ServerIP = "127.0.0.1",
 		ServerPort = "24000",
+		UseSSL = false,
+		UseSSLPort = "24001",
 		ServerSocket,
 		ClientType,
 		Connection;
@@ -79,9 +81,10 @@ define([
 		},
 		
 		onclose: function() {
-			if(Connection.get("connected") == false) {
+			if(Connection.get("connected") == false)
 				console.log("Failed to connect to server");
-			} else {
+			else
+			{
 				console.log("Connection to server closed");
 				Connection.set({connected: false});
 			}
@@ -103,7 +106,10 @@ define([
 		ClientType = clientType || "Unknown";
 		host = host || ServerIP; // Custom host can be provided
 
-		CreateSocket("ws://"+host+":"+ServerPort);
+		if(UseSSL == false)
+			CreateSocket("ws://"+host+":"+ServerPort);
+		else
+			CreateSocket("wss://"+host+":"+UseSSLPort);
 
 		console.log("Connecting to server");
 	};

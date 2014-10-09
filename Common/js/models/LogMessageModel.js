@@ -14,6 +14,7 @@ define([
 
 		},
 
+		// Default values if they aren't provided during initialization of the object
 		defaults: {
 			severity: 'low',
 			timestamp: _.now()
