@@ -14,7 +14,7 @@ html, body {
     margin: 0 auto -142px; /* the bottom margin is the negative value of the footer's height */
 }
 
-.log-footer {
+#log-footer {
 	height: 40px;
 	position: fixed;
     left: 0px;
@@ -32,7 +32,7 @@ html, body {
 	width: 100%;
 }
 
-.log-footer #logger-view span {
+#log-footer #logger-view span {
 	z-index: -1;
 }
 

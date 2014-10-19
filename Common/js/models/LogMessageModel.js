@@ -17,7 +17,8 @@ define([
 		// Default values if they aren't provided during initialization of the object
 		defaults: {
 			severity: 'debug',
-			timestamp: _.now()
+			timestamp: _.now(),
+			display: true
 		}
 	});
 

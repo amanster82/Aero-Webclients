@@ -12,7 +12,7 @@ define([
 	
 		Logger.Initialize();
 		Logger.Log({ message: "Logger initialized" });
-	
+		
 		Network.Initialize();
 		Network.ConnectToServer("ImageAnalyst");
 		
