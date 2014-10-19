@@ -198,3 +198,11 @@ body {
 .context-menu-hover {
 	background-color:#d6e9f8;
 }
+
+.connection-state-connected {
+	color: green;
+}
+
+.connection-state-disconnected {
+	color: red;
+}
