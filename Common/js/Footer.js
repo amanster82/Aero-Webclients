@@ -5,7 +5,7 @@ $('.footer').click(function() {
     $(this).animate({ 
       height: "40px"
     }, 600, 'swing', function() {
-      $(this).html("Click me!");
+      $(this).html("Aero Logs");
     });
     
   } else {
@@ -13,7 +13,7 @@ $('.footer').click(function() {
     $(this).animate({ 
       height: "450px" 
     }, 600, 'swing', function() {
-      $(this).html("Click me again!");                
+      $(this).html("Aero Logs");                
     });
     
   }
