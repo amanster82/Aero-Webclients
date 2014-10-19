@@ -20,10 +20,13 @@ define([
 		},
 
 		render: function() {
+			var msg = "<div class=\"log-message\"><span class=\"log-timestamp\">[" + this.model.get("timestamp") +
+						"] </span><span class=\"log-severity log-severity-\"" + this.model.get("severity") +
+							"\">" + this.model.get("severity") + ": </span><span class=\"logmessage-text\">" +  
+							this.model.get("message") + "</span></div>";
 
 			// Update the UI when there's a change
-			this.$el.html("[" + this.model.get("timestamp") + "] " + 
-				this.model.get("severity") + ": " + this.model.get("message"));
+			this.$el.html(msg);
 
 			// Return this in order to allow for render chaining
 			return this;
