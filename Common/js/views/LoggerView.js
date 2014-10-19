@@ -6,9 +6,10 @@ define([
 ], function($, _, Backbone, LogMessageView){
 
 
-	var FilterWarnings = true,
-		FilterCritical = true,
-		FilterDebug = true;
+	// Whether to show certain messages
+	var ShowWarnings = true,
+		ShowCritical = true,
+		ShowDebug = true;
 
 	/**
 	  * The LoggerView will monitor for any changes in the LoggerCollection
@@ -47,7 +48,7 @@ define([
 
 		// Render the new model
 		add: function(logmessage) {
-			// Only display it if its set
+			// Only display it if its set and exists
 			if(logmessage.get("display") === true && logmessage.get("message") !== undefined)
 			{
 				var view = new LogMessageView({model: logmessage});
@@ -55,32 +56,35 @@ define([
 			}
 		},
 
+		// Turn warnings on and off
 		filterWarning: function() {
-			FilterWarnings = !FilterWarnings;
+			ShowWarnings = !ShowWarnings;
 
 			this.collection.each(function(log) {
 				if(log.get("severity") === "warning") {
-					log.set( { "display" : FilterWarnings } );
+					log.set( { "display" : ShowWarnings } );
 				}
 			});
 		},
 
+		// Turn debug messages on and off
 		filterDebug: function() {
-			FilterDebug = !FilterDebug;
+			ShowDebug = !ShowDebug;
 
 			this.collection.each(function(log) {
 				if(log.get("severity") === "debug") {
-					log.set( { "display" : FilterDebug } );
+					log.set( { "display" : ShowDebug } );
 				}
 			});
 		},
 
+		// Turn critical messages on and off
 		filterCritical: function() {
-			FilterDebug = !FilterDebug;
+			ShowDebug = !ShowDebug;
 
 			this.collection.each(function(log) {
 				if(log.get("severity") === "critical") {
-					log.set( { "display" : FilterDebug } );
+					log.set( { "display" : ShowDebug } );
 				}
 			});
 		}

@@ -1,5 +1,6 @@
 $('#log-footer').click(function(event) {
 
+	// Stops the footer from receiving clicks if a button is clicked
 	if($(event.target).is(".filter-button"))
 		return;
 
@@ -19,4 +20,3 @@ $('#log-footer').click(function(event) {
 	}
 });
 
-// Stops the footer from receiving clicks if a button is clicked
