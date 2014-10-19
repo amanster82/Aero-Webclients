@@ -4,9 +4,6 @@
 
 html, body {
 	height: 100%;
-}
-
-body {
 	overflow: hidden;
 }
 
@@ -22,13 +19,11 @@ body {
 	position: fixed;
     left: 0px;
     right: 0px;
-	bottom: 0px;
+	bottom: 30px;
 	color: #fff;
 	text-align: center;
-	background-color: #222;
-	border-top: 1px solid #000;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+	background-color: #333;
+	border: 1px solid #000;
     border-radius: 5px 5px 0 0;
 	z-index: 999;
     font-family: arial;
@@ -46,6 +41,10 @@ body {
 }
 
 .btn-group {
+	margin-top: 25px;
+}
+
+#copyright p {
 	margin-top: 25px;
 }
 
@@ -73,71 +72,6 @@ body {
 }
 #connection-view {
 	margin-top: 5px;
-<<<<<<< HEAD
-}
-=======
-}
-
-#connected {
-
-}
-
-#map-selector {
-	margin-bottom: 8px;
-}
-
-.map-selector-radio {
-	position: absolute;
-	clip: rect(0px, 0px, 0px, 0px);
-}
-
-.map-selector-radio-label {
-	margin-left: 0px;
-	margin-right: -0.33em;
-	border: 1px solid #d3d3d3;
-	background: #e6e6e6;
-	font-weight: normal;
-	color: rgb(85, 85, 85);
-	font-family: Verdana,Arial,sans-serif;
-	font-size: 0.8em;
-	text-decoration: none;
-	display: inline-block;
-	position: relative;
-	cursor: pointer;
-}
-
-.map-selector-radio-label:not(.radio-checked):hover {
-	background: #dadada;
-	border: 1px solid #999999;
-}
-
-.radio-checked {
-	border: 1px solid #aaaaaa;
-	background: #ffffff;
-}
-
-.radio-left {
-	border-bottom-left-radius: 4px;
-	border-top-left-radius: 4px;
-}
-
-.radio-right {
-	border-bottom-right-radius: 4px;
-	border-top-right-radius: 4px;
-}
-
-.map-selector-text {
-	display: block;
-	line-height: normal;
-	padding: 0.4em 0.8em;
-}
-
-.status-connected {
-	color: #0cff00;
-}
-
-.status-disconnected {
-	color: #ff0808;
 }
 
 #filter-wrapper{
@@ -181,6 +115,7 @@ body {
     margin-left: 8px;
 }
 
+
 #context-menu {
 	background-color: #FFFFFF;
 	width: 170px;
@@ -218,4 +153,3 @@ body {
 .connection-state-disconnected {
 	color: red;
 }
->>>>>>> 30922cb6939b3c5af10ebb7ad1220a385eb76380
