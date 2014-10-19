@@ -2,10 +2,13 @@
 	margin: 0;
 }
 
-html, body {
+html {
 	height: 100%;
 }
 
+body {
+	overflow: hidden;
+}
 .wrapper {
     min-height: 100%;
     height: auto !important;
@@ -40,8 +43,8 @@ html, body {
 #connection-status {
 	float: right;
 	color: #FFF;
-	/*margin-top: 25px;
-	margin-right: 20px;*/
+	margin-top: 25px;
+	margin-right: 20px;
 	font-weight: bold;
 }
 
@@ -49,9 +52,6 @@ html, body {
 	margin-top: 30px;
 }
 
-#connection-view {
-	display: inline-block;
-}
 
 #connection-status button {
 	margin-left: 20px;
