@@ -2,9 +2,10 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
+	'bootstrapjs',
 	'Network',
 	'Logger'
-], function($, _, Backbone, Network, Logger){
+], function($, _, Backbone, Bootstrap, Network, Logger){
 
 	var Initialize = function () {
 	

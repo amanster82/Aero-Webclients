@@ -15,7 +15,7 @@ define([
 	  */
 	var ServerIP = "127.0.0.1",
 		ServerPort = "24000",
-		UseSSL = false,
+		UseSSL = true,
 		UseSSLPort = "24001",
 		ServerSocket,
 		ClientType,

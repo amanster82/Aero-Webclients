@@ -1,10 +1,14 @@
 require.config({
 	baseUrl: "js/", // Base directory for this application
+	shim: {
+		bootstrapjs: { "deps" : ['jquery'] }
+	},
 	paths: {
 		// Load all of the common modules
 		jquery: '../../Common/js/libs/jquery/jquery',
 		underscore: '../../Common/js/libs/underscore/underscore',
 		backbone: '../../Common/js/libs/backbone/backbone',
+		bootstrapjs: '../../Common/js/libs/bootstrap/bootstrap.min',
 		Network: '../../Common/js/Network',
 		PacketBuffer: '../../Common/js/PacketBuffer',
 		PacketFactory: '../../Common/js/PacketFactory',
