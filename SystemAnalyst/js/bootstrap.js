@@ -19,7 +19,8 @@ require.config({
 		LogMessageView: '../../Common/js/views/LogMessageView',
 		LoggerView: '../../Common/js/views/LoggerView',
 		LogMessageModel: '../../Common/js/models/LogMessageModel',
-		Util: '../../Common/js/Util'
+		Util: '../../Common/js/Util',
+		Footer: '../../Common/js/Footer'
 	}
 });
 
