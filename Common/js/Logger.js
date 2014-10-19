@@ -21,8 +21,6 @@ define([
 	var Initialize = function() {
 		logCollection = new LoggerCollection({ model: LogMessageModel });
 		logView = new LoggerView({ collection: logCollection });
-
-		console.log("Logger initialized");
 	};
 
 	/**
@@ -36,8 +34,8 @@ define([
 		if(properties.message === undefined)
 			return;
 
-		var severity = properties.severity || 'low';
-		var timestamp = properties.timestamp || _.now();
+		var severity = properties.severity;
+		var timestamp = properties.timestamp;
 
 		logCollection.add({ message: msg, severity: severity, timestamp: timestamp });
 	};

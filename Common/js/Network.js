@@ -2,11 +2,12 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
+	'Logger',
 	'PacketBuffer',
 	'PacketFactory',
 	'ConnectionModel',
 	'ConnectionView'
-], function($, _, Backbone, PacketBuffer, PacketFactory, ConnectionModel, ConnectionView) {
+], function($, _, Backbone, Logger, PacketBuffer, PacketFactory, ConnectionModel, ConnectionView) {
 
 	/**
 	  * Internal properties
@@ -49,7 +50,7 @@ define([
 
 		Connection.set({connected: false});
 
-		console.log("Network initialized");
+		Logger.Log({ message: "Network initialized" });
 	};
 	
 	/**
@@ -58,7 +59,7 @@ define([
 	  */
 	var SocketFuncs = {
 		onopen: function() {
-			console.log("Connected to server");
+			Logger.Log({ message: "Connected to server" });
 
 			Connection.set({connected: true});
 
@@ -82,10 +83,10 @@ define([
 		
 		onclose: function() {
 			if(Connection.get("connected") == false)
-				console.log("Failed to connect to server");
+				Logger.Log({ message: "Failed to connect to server" });
 			else
 			{
-				console.log("Connection to server closed");
+				Logger.Log({ message: "Connection to server closed" });
 				Connection.set({connected: false});
 			}
 		}
@@ -98,7 +99,7 @@ define([
 	var ConnectToServer = function(clientType, host) {
 		if(Connection.get("connected") == true)
 		{
-			console.log("Error: Already connected");
+			Logger.Log({ severity: 'warning', message: "Error: Already connected" });
 			return;
 		}
 
@@ -111,7 +112,7 @@ define([
 		else
 			CreateSocket("wss://"+host+":"+UseSSLPort);
 
-		console.log("Connecting to server");
+		Logger.Log({ message: "Connecting to server" });
 	};
 
 	/**
@@ -133,7 +134,7 @@ define([
 	var Send = function(packet) {
 		if(Connection.get("connected") == false)
 		{
-			console.log("Error: Cannot send packet, socket is not connected");
+			Logger.Log({ severity: 'critical', message: "Error: Cannot send packet, socket is not connected" });
 			return;
 		}
 

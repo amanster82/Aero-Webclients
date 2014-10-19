@@ -14,12 +14,12 @@ html, body {
     margin: 0 auto -142px; /* the bottom margin is the negative value of the footer's height */
 }
 
-.footer {
+.log-footer {
 	height: 40px;
 	position: fixed;
     left: 0px;
     right: 0px;
-	bottom: 30px;
+	bottom: 57px;
 	color: #fff;
 	text-align: center;
 	background-color: #333;
@@ -27,13 +27,15 @@ html, body {
     border-radius: 5px 5px 0 0;
 	z-index: 999;
     font-family: arial;
-    text-transform: uppercase;
     padding-top: 10px;
 }
 
-.footer p {
-	color: #FFFFFF;
-	margin: 15px;
+.log-footer span {
+	z-index: -1;
+}
+
+.footer-closed > span:not(:first-child){
+	display: none;
 }
 
 .push {

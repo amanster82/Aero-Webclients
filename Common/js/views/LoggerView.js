@@ -33,7 +33,7 @@ define([
 		// Render the new model
 		add: function(logmessage) {
 			var view = new LogMessageView({model: logmessage});
-			this.$el.append(view.render().el);
+			this.$el.prepend(view.render().el);
 		}
 
 	});

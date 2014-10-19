@@ -13,7 +13,6 @@ define([
 		initialize: function() {
             this.on("change:connected", function(model) {
                 var connected = model.get("connected");
-                console.log("Connected status changed to " + connected);
             });
 		},
 
