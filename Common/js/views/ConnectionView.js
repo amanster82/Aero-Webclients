@@ -25,9 +25,9 @@ define([
 		},
 
 		render: function() {
-
+			var text = "<div id=\"connection-text\">Status: <span id=\"connection-status\">" + (this.model.get("connected") === true ? "Connected" : "Disconnected") + "</span></div>";
 			// Update the UI when there's a change
-			this.$el.html("Connected: " + this.model.get("connected"));
+			this.$el.html(text);
 
 			// Return this in order to allow for render chaining
 			return this;
