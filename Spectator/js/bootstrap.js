@@ -18,7 +18,8 @@ require.config({
 		LoggerCollection: '../../Common/js/collections/LoggerCollection',
 		LogMessageView: '../../Common/js/views/LogMessageView',
 		LoggerView: '../../Common/js/views/LoggerView',
-		LogMessageModel: '../../Common/js/models/LogMessageModel'
+		LogMessageModel: '../../Common/js/models/LogMessageModel',
+		Util: '../../Common/js/Util'
 	}
 });
 

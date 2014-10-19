@@ -1,8 +1,9 @@
 define([
 	'jquery',
 	'underscore',
-	'backbone'
-], function($, _, Backbone){
+	'backbone',
+	'Util'
+], function($, _, Backbone, Util){
 
 	/**
 	  * The LogMessageView controls how each individual log message is styled and controlled
@@ -20,10 +21,13 @@ define([
 		},
 
 		render: function() {
+			var msg = "<div class=\"log-message\"><span class=\"log-timestamp\">[" + Util.FormatTimestamp(this.model.get("timestamp")) +
+						"] </span><span class=\"log-severity log-severity-" + this.model.get("severity") +
+							"\">" + Util.UppercaseFirst(this.model.get("severity")) + ": </span><span class=\"logmessage-text\">" +  
+							this.model.get("message") + "</span></div>";
 
 			// Update the UI when there's a change
-			this.$el.html("[" + this.model.get("timestamp") + "] " + 
-				this.model.get("severity") + ": " + this.model.get("message"));
+			this.$el.html(msg);
 
 			// Return this in order to allow for render chaining
 			return this;
