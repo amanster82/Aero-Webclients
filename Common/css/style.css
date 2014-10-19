@@ -27,15 +27,35 @@ html, body {
     border-radius: 5px 5px 0 0;
 	z-index: 999;
     font-family: arial;
-    padding-top: 10px;
+    padding: 10px 0;
+	display: table;
+	width: 100%;
 }
 
-.log-footer span {
+.log-footer #logger-view span {
 	z-index: -1;
 }
 
-.footer-closed > span:not(:first-child){
+.footer-closed #logger-view > span:not(:first-child){
 	display: none;
+}
+
+.footer-closed #logger-view-filters {
+	display: none;
+}
+
+#logger-view {
+	display: table-footer-group;
+}
+
+#logger-view-filters {
+	display: table-header-group;
+}
+
+.filter-button {
+	display: inline-block;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }
 
 .log-severity-critical {
