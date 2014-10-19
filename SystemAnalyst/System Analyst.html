@@ -50,9 +50,12 @@
 		<div id="logger-view">
 		</div>
 		<div id="logger-view-filters">
-			<div class="btn btn-primary filter-button filter-debug">Filter Debug</div>
-			<div class="btn btn-warning filter-button filter-warning">Filter Warnings</div>
-			<div class="btn btn-danger filter-button filter-critical">Filter Critical</div>
+			<input class="filter-debug" type="checkbox" id="debug" value="all" checked>
+			   <label for="debug">Debug</label>
+			<input class="filter-warning" type="checkbox" id="warning" value="all" checked>
+			   <label for="warning">Warning</label>
+			<input class="filter-critical" type="checkbox" id="critical" value="all" checked>
+			   <label for="critical">Critical</label>
 		</div>
 	</div>
 	<nav class='navbar navbar-inverse'>
