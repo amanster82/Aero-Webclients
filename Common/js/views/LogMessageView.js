@@ -23,7 +23,7 @@ define([
 		render: function() {
 			var msg = "<div class=\"log-message\"><span class=\"log-timestamp\">[" + Util.FormatTimestamp(this.model.get("timestamp")) +
 						"] </span><span class=\"log-severity log-severity-" + this.model.get("severity") +
-							"\">" + Util.UppercaseFirst(this.model.get("severity")) + ": </span><span class=\"logmessage-text\">" +  
+							"\">" + Util.UppercaseFirst(this.model.get("severity")) + ": </span><span class=\"log-message-text\">" +  
 							this.model.get("message") + "</span></div>";
 
 			// Update the UI when there's a change

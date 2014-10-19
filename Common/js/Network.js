@@ -83,10 +83,10 @@ define([
 		
 		onclose: function() {
 			if(Connection.get("connected") == false)
-				Logger.Log({ message: "Failed to connect to server" });
+				Logger.Log({ severity: 'critical', message: "Failed to connect to server" });
 			else
 			{
-				Logger.Log({ message: "Connection to server closed" });
+				Logger.Log({ severity: 'warning', message: "Connection to server closed" });
 				Connection.set({connected: false});
 			}
 		}

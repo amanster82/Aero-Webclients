@@ -38,6 +38,14 @@ html, body {
 	display: none;
 }
 
+.log-severity-critical {
+	color: red;
+}
+
+.log-severity-warning {
+	color: yellow;
+}
+
 .push {
     height: 50px; /* .push must be the same height as .footer */
 }
