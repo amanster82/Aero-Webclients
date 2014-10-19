@@ -18,8 +18,22 @@ body {
 }
 
 .footer {
-	background-color: #FFFFFF;
-	height: 60px;
+	height: 50px;
+	position: fixed;
+    left: 0px;
+    right: 0px;
+	bottom: 0px;
+	color: #fff;
+	text-align: center;
+	background-color: #222;
+	border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-radius: 5px 5px 0 0;
+	z-index: 999;
+    font-family: arial;
+    text-transform: uppercase;
+    padding-top: 10px;
 }
 
 .footer p {
