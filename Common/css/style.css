@@ -126,7 +126,7 @@ input[id='critical']:checked + label {
 	padding-left: 10px;
 	float:left; 
 	margin:0; 
-	width:15%;
+	width:100px;
 }
 
 #column2 {
