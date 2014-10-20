@@ -80,11 +80,11 @@ define([
 
 		// Turn critical messages on and off
 		filterCritical: function() {
-			ShowDebug = !ShowDebug;
+			ShowCritical = !ShowCritical;
 
 			this.collection.each(function(log) {
 				if(log.get("severity") === "critical") {
-					log.set( { "display" : ShowDebug } );
+					log.set( { "display" : ShowCritical } );
 				}
 			});
 		}
