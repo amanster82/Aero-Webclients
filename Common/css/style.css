@@ -113,12 +113,34 @@ input[id='critical']:checked + label {
 	display: none;
 }
 
+.log-message {
+	padding-left: 100px;
+}
+
 #logger-view {
 	display: table-footer-group;
+	margin-left: 10px;
+	text-align: left;
 }
 
 #logger-view-filters {
 	display: table-header-group;
+
+}
+
+#logger-view-filters ul {
+	display: table-header-group;
+
+}
+
+.filter-debug {
+	padding: 40px;
+}
+
+
+
+#filter-buttons {
+	margin-top:-20px;
 }
 
 .filter-button {
