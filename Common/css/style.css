@@ -97,7 +97,7 @@ input[id='critical']:checked + label {
 	z-index: 999;
     font-family: arial;
     padding: 10px 0;
-	display: table;
+
 	width: 100%;
 }
 
@@ -114,34 +114,31 @@ input[id='critical']:checked + label {
 }
 
 .log-message {
-	padding-left: 100px;
+	padding-left: 10px;
 }
 
 #logger-view {
 	display: table-footer-group;
-	margin-left: 10px;
 	text-align: left;
 }
 
-#logger-view-filters {
-	display: table-header-group;
+#column1 {
+	padding-left: 10px;
+	float:left; 
+	margin:0; 
+	width:15%;
+}
 
+#column2 {
+	float:left; 
+	margin-left:0px; 
+	width:85%;
 }
 
 #logger-view-filters ul {
 	display: table-header-group;
-
 }
 
-.filter-debug {
-	padding: 40px;
-}
-
-
-
-#filter-buttons {
-	margin-top:-20px;
-}
 
 .filter-button {
 	display: inline-block;

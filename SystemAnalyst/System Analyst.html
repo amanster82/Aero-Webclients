@@ -47,15 +47,18 @@
 	</div>
 	<div class="push"></div> <!--Part of forcing a sticky Footer-->
 	<div id="log-footer" class="footer-closed">
-		<div id="logger-view">
+		<div id="column1">
+			<div id="logger-view-filters">
+				<input class="filter-button filter-debug" type="checkbox" id="debug" value="all" checked>
+				   <label for="debug">Debug</label>
+				<input class="filter-button filter-warning" type="checkbox" id="warning" value="all" checked>
+				   <label for="warning">Warning</label>
+				<input class="filter-button filter-critical" type="checkbox" id="critical" value="all" checked>
+				   <label for="critical">Critical</label>
+			</div>
 		</div>
-		<div id="logger-view-filters">
-			<input class="filter-button filter-debug" type="checkbox" id="debug" value="all" checked>
-			   <label for="debug">Debug</label>
-			<input class="filter-button filter-warning" type="checkbox" id="warning" value="all" checked>
-			   <label for="warning">Warning</label>
-			<input class="filter-button filter-critical" type="checkbox" id="critical" value="all" checked>
-			   <label for="critical">Critical</label>
+		<div id="column2">
+			<div id="logger-view"></div>
 		</div>
 	</div>
 	<nav class='navbar navbar-inverse'>
