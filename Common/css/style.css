@@ -15,6 +15,7 @@ html, body {
 }
 
 #copyright p {
+	padding-top: 15px;
 	text-align: center;
 	color: #FFFFFF;
 }
@@ -88,7 +89,7 @@ input[id='critical']:checked + label {
 	position: fixed;
     left: 0px;
     right: 0px;
-	bottom: 57px;
+	bottom: 40px;
 	color: #fff;
 	text-align: center;
 	background-color: #333;
@@ -97,7 +98,6 @@ input[id='critical']:checked + label {
 	z-index: 999;
     font-family: arial;
     padding: 10px 0;
-
 	width: 100%;
 }
 
