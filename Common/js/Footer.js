@@ -4,19 +4,13 @@ $('#log-footer').click(function(event) {
 	if($(event.target).is(".filter-button") || $(event.target).is("label"))
 		return;
 
-	if ($(this).height() > 40) {
-		$(this).animate({ 
-		  height: "40px"
-		}, 0, 'swing', function() {
-			$(this).toggleClass('footer-closed');
-		});
+	$(this).toggleClass('footer-closed');
 
-	} else {
-		$(this).animate({ 
-		  height: '30%'
-		}, 0, 'swing', function() {
-			   $(this).toggleClass('footer-closed');
-		});
+	if ($(this).height() > 40) {
+		$(this).css("overflow-y","scroll");
+	}
+	else {
+		$(this).css("overflow-y","hidden");
 	}
 });
 
