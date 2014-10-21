@@ -137,7 +137,7 @@ input[id='critical']:checked + label {
 }
 
 #logger-view {
-	display: table-footer-group;
+	max-height: 430px;
 	text-align: left;
 }
 
