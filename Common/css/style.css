@@ -204,36 +204,9 @@ input[id='critical']:checked + label {
 	margin-right: 20px;
 	font-weight: bold;
 }
+
 #connection-view {
 	margin-top: 5px;
-}
-
-#filter-wrapper{
-    overflow:auto;
-    border-right: 1px solid black;
-    height:85%;
-}
-
-#console-wrapper {
-    height:70%;
-    overflow:auto;
-    border-bottom: 1px solid black;
-}
-
-#console-wrapper *{
-    font-size:11px !important; 
-}
-
-#input-wrapper {
-
-}
-
-.console-date-field{
-    width:150px;
-}
-
-#input-field{
-    width:100%;
 }
 
 .navbar-select {
@@ -255,36 +228,6 @@ input[id='critical']:checked + label {
 	height: 35px;
 	width: 100%;
 	margin: 0;
-}
-
-#context-menu {
-	background-color: #FFFFFF;
-	width: 170px;
-	padding: 0px;
-	border: 1px;
-	cursor: pointer;
-	border-left: 1px solid #CCCCCC;
-	border-top: 1px solid #CCCCCC;
-	border-right: 1px solid #676767;
-	border-bottom: 1px solid #676767;
-	text-decoration: none;
-}
-
-.context-menu-item {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 12px;
-	text-align: left;
-	line-height: 30px;
-	border-left: 0px;
-	border-top: 0px;
-	border-right: 0px;
-	padding: 3px 5px 3px 5px;
-	background-repeat: no-repeat;
-	background-position: 4px center;
-}
-
-.context-menu-hover {
-	background-color:#d6e9f8;
 }
 
 .connection-state-connected {
