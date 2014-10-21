@@ -6,7 +6,7 @@ define([
 	'Network',
 	'Logger',
 	'Footer'
-], function($, _, Backbone, Bootstrap, Network, Logger){
+], function($, _, Backbone, Bootstrap, Network, Logger, Footer){
 
 	var Initialize = function () {
 	

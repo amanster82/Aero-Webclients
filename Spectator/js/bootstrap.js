@@ -1,7 +1,8 @@
 require.config({
 	baseUrl: "js/", // Base directory for this application
 	shim: {
-		bootstrapjs: { "deps" : ['jquery'] }
+		bootstrapjs: { "deps" : ['jquery'] },
+		Footer: { "deps" : ['jquery'] }
 	},
 	paths: {
 		// Load all of the common modules
