@@ -137,7 +137,6 @@ input[id='critical']:checked + label {
 }
 
 #logger-view {
-	overflow-y: scroll;
 	max-height: 430px;
 	text-align: left;
 }
