@@ -53,6 +53,10 @@ input[type=checkbox] + label {
     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
 }
+
+input[id='warning'] + label {
+    padding: 4px 7px;
+}
  
 input[id='debug']:checked + label {
        background-image: none;
@@ -89,7 +93,7 @@ input[id='critical']:checked + label {
 	position: fixed;
     left: 0px;
     right: 0px;
-	bottom: 40px;
+	bottom: 6%;
 	color: #fff;
 	text-align: center;
 	background-color: #333;

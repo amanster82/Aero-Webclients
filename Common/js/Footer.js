@@ -13,7 +13,7 @@ $('#log-footer').click(function(event) {
 
 	} else {
 		$(this).animate({ 
-		  height: "450px" 
+		  height: '30%'
 		}, 0, 'swing', function() {
 			   $(this).toggleClass('footer-closed');
 		});
