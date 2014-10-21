@@ -49,8 +49,9 @@ define([
 		var ConnectView = new ConnectionView({ model:Connection });
 
 		Connection.set({connected: false});
-
-		Logger.Log({ message: "Network initialized" });
+		for(var i=0; i < 100;i++) {
+			Logger.Log({ message: "Network initialized" });
+		}
 	};
 	
 	/**

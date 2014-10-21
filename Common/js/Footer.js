@@ -6,8 +6,9 @@ $('#log-footer').click(function(event) {
 
 	$(this).toggleClass('footer-closed');
 
-	if ($(this).height() > 40) {
+	if ($(this).height() > 400) {
 		$(this).css("overflow-y","scroll");
+		
 	}
 	else {
 		$(this).css("overflow-y","hidden");
