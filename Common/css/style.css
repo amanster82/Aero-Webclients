@@ -141,6 +141,7 @@ input[id='critical']:checked + label {
 
 #logger-view-filters ul {
 	display: table-header-group;
+	list-style-type: none;
 }
 
 
