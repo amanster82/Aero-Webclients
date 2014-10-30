@@ -16,7 +16,7 @@ define([
 	  */
 	var ServerIP = "127.0.0.1",
 		ServerPort = "24000",
-		UseSSL = true,
+		UseSSL = false, // Disabled by default so network can be debugged more easily
 		UseSSLPort = "24001",
 		ServerSocket,
 		ClientType,
@@ -49,6 +49,11 @@ define([
 		var ConnectView = new ConnectionView({ model:Connection });
 
 		Connection.set({connected: false});
+
+		// Start istening to changes in the connection model state
+		_.extend(this, Backbone.Events);
+
+		this.listenTo(ConnectView, "connectionButtonClick", ConnectionChangeEvent);
 
 		Logger.Log({ message: "Network initialized" });
 	};
@@ -99,7 +104,7 @@ define([
 	var ConnectToServer = function(clientType, host) {
 		if(Connection.get("connected") == true)
 		{
-			Logger.Log({ severity: 'warning', message: "Error: Already connected" });
+			Logger.Log({ severity: 'warning', message: "Network already connected" });
 			return;
 		}
 
@@ -119,13 +124,18 @@ define([
 	  * Creates a new WebSocket to the specified address
 	  * @private
 	  */
-	var CreateSocket = function(address)
-	{
+	var CreateSocket = function(address) {
 		ServerSocket = new WebSocket(address);
 		ServerSocket.binaryType = "arraybuffer";
 
 		_.extend(ServerSocket, SocketFuncs);
-	}
+	};
+
+	var DestroySocket = function() {
+		delete ServerSocket;
+		Connection.set( { connected: false });
+		Logger.Log({ severity: 'warning', message: "Disconnected from server" });
+	};
 	
 	/**
 	  * Sends a packet to a connected server
@@ -142,6 +152,22 @@ define([
 		if(packet !== undefined && packet.Buffer.getBuffer() instanceof ArrayBuffer)
 		{
 			ServerSocket.send(packet.Buffer.getBuffer()); // The chain..
+		}
+	};
+
+	/**
+	  * Handles calling the correct function corresponding to a received packet
+	  * @private
+	  */
+	var Recv = function(packet) {
+
+	};
+
+	var ConnectionChangeEvent = function(currentState) {
+		if(currentState === true) {
+			DestroySocket();
+		} else {
+			ConnectToServer(ClientType);
 		}
 	};
 	

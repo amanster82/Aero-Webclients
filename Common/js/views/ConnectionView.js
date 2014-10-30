@@ -13,9 +13,10 @@ define([
 	var ConnectionView = Backbone.View.extend({
 
 		// The div to update
-		el: "#connection-view",
+		el: "#connection-status",
 
 		events: {
+			'click #connect-btn' : 'connectButtonEvent'
 		},
 
 		initialize: function() {
@@ -28,10 +29,21 @@ define([
 			var text = "<div id=\"connection-text\">Status: <span id=\"connection-state\" class=\"connection-state-" + (this.model.get("connected") === true ? "connected" : "disconnected") +
 			"\">" + (this.model.get("connected") === true ? "Connected" : "Disconnected") + "</span></div>";
 			// Update the UI when there's a change
-			this.$el.html(text);
+			this.$el.find("#connection-view").html(text);
+			this.$el.find("#connect-btn").html((this.model.get("connected") === true ? "Disconnect" : "Connect"));
 
 			// Return this in order to allow for render chaining
 			return this;
+		},
+
+		connectButtonEvent: function() {
+			if(this.model.get("connected") === true) {
+				//this.model.set({ connected: false });
+				this.trigger("connectionButtonClick", true);
+			} else {
+				//this.model.set({ connected: true });
+				this.trigger("connectionButtonClick", false);
+			}
 		}
 
 	});

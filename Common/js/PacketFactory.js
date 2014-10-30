@@ -2,8 +2,9 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
+	'Logger',
 	'PacketBuffer',
-], function($, _, Backbone, PacketBuffer){
+], function($, _, Backbone, Logger, PacketBuffer){
 
 	/**
 	  * Factory method. Creates a base packet and then extends it with the requested packets
@@ -60,7 +61,7 @@ define([
 			this.Buffer.write(payload.length, this.Buffer.VarType["ushort"]);
 			this.Buffer.write(payload);
 
-			console.log("Serializing JSON packet");
+			Logger.Log({ message: "Sent out " + size + " byte " + this.Name + " packet" });
 		}
 	};
 	
