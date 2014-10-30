@@ -64,7 +64,7 @@ define([
 	  */
 	var SocketFuncs = {
 		onopen: function() {
-			Logger.Log({ message: "Connected to server" });
+			Logger.Log({ severity: 'success', message: "Connected to server" });
 
 			Connection.set({connected: true});
 

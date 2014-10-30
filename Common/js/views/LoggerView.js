@@ -9,7 +9,8 @@ define([
 	// Whether to show certain messages
 	var ShowWarnings = true,
 		ShowCritical = true,
-		ShowDebug = true;
+		ShowDebug = true,
+		ShowSuccess = true;
 
 	/**
 	  * The LoggerView will monitor for any changes in the LoggerCollection
@@ -24,7 +25,8 @@ define([
 		events: {
 			'click .filter-warning' : 'filterWarning',
 			'click .filter-debug' : 'filterDebug',
-			'click .filter-critical' : 'filterCritical'
+			'click .filter-critical' : 'filterCritical',
+			'click .filter-success' : 'filterSuccess'
 		},
 
 		initialize: function() {
@@ -85,6 +87,17 @@ define([
 			this.collection.each(function(log) {
 				if(log.get("severity") === "critical") {
 					log.set( { "display" : ShowCritical } );
+				}
+			});
+		},
+
+		// Turn critical messages on and off
+		filterSuccess: function() {
+			ShowSuccess = !ShowSuccess;
+
+			this.collection.each(function(log) {
+				if(log.get("severity") === "success") {
+					log.set( { "display" : ShowSuccess } );
 				}
 			});
 		}
