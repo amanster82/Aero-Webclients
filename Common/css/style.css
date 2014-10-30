@@ -207,7 +207,12 @@ input[id='critical']:checked + label {
 }
 
 #connection-view {
-	margin-top: 5px;
+	display: inline-block;
+	margin: 0 20px;
+}
+
+#connect-btn {
+	display: inline-block;
 }
 
 .navbar-select {
