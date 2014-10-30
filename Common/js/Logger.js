@@ -29,6 +29,12 @@ define([
 	  * @export
 	  */	
 	var Log = function(properties) {
+		if(typeof properties !== "object")
+		{
+			LogMessage(properties);
+			return;
+		}
+
 		var msg = properties.message;
 
 		if(properties.message === undefined)
@@ -45,7 +51,7 @@ define([
 	  * @export
 	  */	
 	var LogMessage = function(msg) {
-		if(properties.message === undefined)
+		if(msg === undefined)
 			return;
 
 		logCollection.add({ message: msg });
