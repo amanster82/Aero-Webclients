@@ -163,6 +163,11 @@ define([
 
 	};
 
+	/**
+	  * Called when the Connect/Disconnect button is clicked
+	  * @param {boolean} currentState Whether the client is currently connected
+	  * @private
+	  */
 	var ConnectionChangeEvent = function(currentState) {
 		if(currentState === true) {
 			DestroySocket();

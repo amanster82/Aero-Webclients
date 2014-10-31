@@ -36,14 +36,9 @@ define([
 			return this;
 		},
 
+		// Trigger the event with whether the client is currently connected or not
 		connectButtonEvent: function() {
-			if(this.model.get("connected") === true) {
-				//this.model.set({ connected: false });
-				this.trigger("connectionButtonClick", true);
-			} else {
-				//this.model.set({ connected: true });
-				this.trigger("connectionButtonClick", false);
-			}
+			this.trigger("connectionButtonClick", this.model.get("connected") );
 		}
 
 	});
