@@ -33,7 +33,7 @@ define([
 
 			// Update when a new model is added to the collection
 			this.listenTo(this.collection, "add", this.add);
-			this.listenTo(this.collection, "change", this.render);
+			//this.listenTo(this.collection, "change", this.render);
 		},
 
 		render: function() {
@@ -67,6 +67,8 @@ define([
 					log.set( { "display" : ShowWarnings } );
 				}
 			});
+
+			this.render();
 		},
 
 		// Turn debug messages on and off
@@ -78,6 +80,8 @@ define([
 					log.set( { "display" : ShowDebug } );
 				}
 			});
+
+			this.render();
 		},
 
 		// Turn critical messages on and off
@@ -89,9 +93,11 @@ define([
 					log.set( { "display" : ShowCritical } );
 				}
 			});
+
+			this.render();
 		},
 
-		// Turn critical messages on and off
+		// Turn success messages on and off
 		filterSuccess: function() {
 			ShowSuccess = !ShowSuccess;
 
@@ -100,6 +106,8 @@ define([
 					log.set( { "display" : ShowSuccess } );
 				}
 			});
+
+			this.render();
 		}
 
 	});
