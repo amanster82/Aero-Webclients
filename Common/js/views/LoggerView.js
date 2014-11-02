@@ -37,12 +37,16 @@ define([
 		},
 
 		render: function() {
-
-			// Clear all elements
-			this.$el.find("#logger-view").html("");
 			
-			// Re-render them
-			this.collection.each(this.add, this);
+			// Filter out messages that are filtered out
+			var mhtml = this.collection.filter( function(log) { return log.get("message") !== undefined && log.get("display") === true; } )
+			// Get an array of all the rendered views
+			.map( function(log) { return (new LogMessageView({model: log})).render().el; })
+			// Concatenate all the views together
+			.reduce(function(html, view) { return view.outerHTML + html;}, "");
+
+			// And finally display the messages
+			this.$el.find("#logger-view").html("").append(mhtml);
 
 			// Return this in order to allow for render chaining
 			return this;
@@ -54,6 +58,7 @@ define([
 			if(logmessage.get("display") === true && logmessage.get("message") !== undefined)
 			{
 				var view = new LogMessageView({model: logmessage});
+
 				this.$el.find("#logger-view").prepend(view.render().el);
 			}
 		},
