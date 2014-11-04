@@ -200,7 +200,7 @@ input[id='success']:checked + label {
 }
 
 .push {
-    height: 50px; /* .push must be the same height as .footer */
+    height: 72px; /* .push must be the same height as .footer */
 }
 
 .btn-group {
@@ -253,8 +253,7 @@ input[id='success']:checked + label {
 }
 
 #footer-navbar {
-	position: absolute;
-	bottom: 0;
+	position: relative;
 	height: 35px;
 	width: 100%;
 	margin: 0;
