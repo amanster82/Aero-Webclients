@@ -15,6 +15,10 @@ html, body {
     margin: 0 auto -142px; /* the bottom margin is the negative value of the footer's height */
 }
 
+header {
+	height: 60px;
+}
+
 #copyright p {
 	padding-top: 15px;
 	text-align: center;
@@ -204,28 +208,24 @@ input[id='success']:checked + label {
 }
 
 .btn-group {
-	margin-top: 25px;
+	margin-top: 12px;
 }
 
 #logo {
-	margin-left: 5%;
 	display: inline-block;
 	float: left;
-	padding: 10px;
+	margin: 0 10px 0 50px;
+}
+
+#logo a img {
+	width: 145px;
+	height: 59px;
 }
 
 #connection-status {
 	float: right;
 	color: #FFF;
-	margin-top: 25px;
-	margin-right: 20px;
-	font-weight: bold;
-}
-
-#connection-status{
-	float: right;
-	color: #FFF;
-	margin-top: 25px;
+	margin-top: 12px;
 	margin-right: 20px;
 	font-weight: bold;
 }
