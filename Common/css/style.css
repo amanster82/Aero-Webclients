@@ -12,7 +12,7 @@ html, body {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -142px; /* the bottom margin is the negative value of the footer's height */
+    margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
 }
 
 header {
@@ -204,7 +204,7 @@ input[id='success']:checked + label {
 }
 
 .push {
-    height: 72px; /* .push must be the same height as .footer */
+    height: 52px; /* .push must be the same height as .footer */
 }
 
 .btn-group {
@@ -241,6 +241,7 @@ input[id='success']:checked + label {
 
 .navbar {
 	border-radius: 0;
+	margin-bottom: 0;
 }
 
 .navbar-select {
