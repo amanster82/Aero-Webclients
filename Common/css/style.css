@@ -19,6 +19,23 @@ header {
 	height: 60px;
 }
 
+.sidebar-wrapper {
+	width: 180px;
+	height: 1440px;
+	position: absolute;
+	z-index: 1;
+	background-color: #222;
+	border-color: #080808;
+	border: 1px solid #000;
+	border-top: 0;
+	border-bottom: 0;
+	cursor: pointer;
+}
+
+.sidebar-closed {
+	width: 70px;
+}
+
 #copyright p {
 	padding-top: 15px;
 	text-align: center;
@@ -122,12 +139,13 @@ input[id='success']:checked + label {
 	text-align: center;
 	background-color: #333;
 	border: 1px solid #000;
-    border-radius: 5px 5px 0 0;
+	border-left: 0;
 	z-index: 999;
     font-family: arial;
     padding: 10px 0;
 	width: 100%;
 	max-height: 450px;
+	margin-left: 180px;
 }
 
 ::-webkit-scrollbar {
@@ -147,6 +165,10 @@ input[id='success']:checked + label {
 
 #log-footer #logger-view span {
 	z-index: -1;
+}
+
+#log-footer.sidebar-closed {
+	margin-left: 70px;
 }
 
 .footer-closed #logger-view > span:not(:first-child){
@@ -184,7 +206,6 @@ input[id='success']:checked + label {
 	list-style-type: none;
 }
 
-
 .filter-button {
 	display: inline-block;
 	margin-right: 10px;
@@ -219,7 +240,7 @@ input[id='success']:checked + label {
 
 #logo a img {
 	width: 145px;
-	height: 59px;
+	height: 58px;
 }
 
 #connection-status {
@@ -261,7 +282,8 @@ input[id='success']:checked + label {
 	position: relative;
 	height: 35px;
 	width: 100%;
-	margin: 0;
+	margin: 0 0 0 70px;
+	border-left: 0;
 }
 
 .connection-state-connected {
