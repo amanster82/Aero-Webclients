@@ -6,6 +6,7 @@ $('.sidebar-wrapper').click(function(event) {
 
 	$(this).toggleClass('sidebar-closed');
 	$('#log-footer').toggleClass('sidebar-closed');
+	$('.aero-body').toggleClass('sidebar-closed');
 });
 
 // Because the page is static and doesn't scroll, this function is very simple for now

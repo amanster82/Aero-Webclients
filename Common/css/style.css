@@ -46,6 +46,15 @@ header {
 	margin:5px;
 }
 
+.aero-body {
+	margin-left: 70px;
+}
+
+.aero-body.sidebar-closed {
+	margin-left: 180px;
+}
+
+
 input[type=checkbox] {
     display:none;
 }
