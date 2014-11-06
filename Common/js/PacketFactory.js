@@ -14,6 +14,12 @@ define([
 	Create = function(packet) {
 		var pkt = new Packet();
 		
+		if(typeof PacketMapping[packet] !== 'object')
+		{
+			Logger.Log({ severity: "critical", message: "Invalid packet " + packet + " requested" });
+			return undefined;
+		}
+
 		if(packet !== undefined)
 			_.extend(pkt, PacketMapping[packet]);		
 		

@@ -153,6 +153,10 @@ define([
 		{
 			ServerSocket.send(packet.Buffer.getBuffer()); // The chain..
 		}
+		else
+		{
+			Logger.Log({ severity: "warning", message: "Failed to send packet" });
+		}
 	};
 
 	/**
