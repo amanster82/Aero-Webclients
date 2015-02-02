@@ -46,30 +46,22 @@
 		</header>
 		<div class="sidebar-wrapper sidebar-closed">
 		</div>
-		<div class='aero-body sidebar-closed'>
+		<div id='aero-body' class='sidebar-closed'>
 			
 			
 			<!-- YOUR CODE HERE -->
 			
 <!-- SOME CSS TO MINIPULATE THE LAYOUT-->
-	<head>
 	<style>
 
-#nav {
+#telemetry {
     line-height:30px;
     background-color:#eeeeeee;
     text-align: left;
-	height:800px;
-    width:200px;
-    float:right;
     padding:5px;	      
 }
 #map-canvas {
-	width:990px;
-	height:550px;
-	position: absolute;
-	left: 175px;
-	right: 10000px;
+	position: relative;
 }
 
 <!-- Implementing Google maps-->
@@ -87,31 +79,35 @@ var map = new google.maps.Map(mapCanvas, mapOptions);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 		</script>
-		</head>
 <!-- Next Some HTML-->
-<body>
 <!-- pushing google maps to the left-->
-<div id="map-canvas"> </div>
-</body>
-<!-- Some work on the right displaying Plane Status etc..-->
-<div id="nav">
-<h1 style="font-size: 16px; text-align: centre">Plane Location</h1>
-Latitude (in degree)<br>
-Longitude (in degree)<br>
-Altitude (in meters)<br>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-10">
+						<div id="map-canvas"> </div>
+					</div>
+					<div class="col-md-2">
+						<div id="telemetry">
+						<h1 style="font-size: 16px; text-align: centre">Plane Location</h1>
+						Latitude (in degree)<br>
+						Longitude (in degree)<br>
+						Altitude (in meters)<br>
 
-<h1 style="font-size: 16px; text-align: centre">Configuration</h1>
-Roll<br>
-Pitch <br>
-Yaw <br>
+						<h1 style="font-size: 16px; text-align: centre">Configuration</h1>
+						Roll<br>
+						Pitch <br>
+						Yaw <br>
 
-<h1 style="font-size: 16px; text-align: centre">Avionics</h1>
-Airspeed<br>
-Ground speed<br>
-Mission Time<br>
+						<h1 style="font-size: 16px; text-align: centre">Avionics</h1>
+						Airspeed<br>
+						Ground speed<br>
+						Mission Time<br>
 
 
-</div>
+						</div>					
+					</div>
+				</div>
+			</div>
 		
 		</div>
 		<div class="push"></div> <!--Part of forcing a sticky Footer-->

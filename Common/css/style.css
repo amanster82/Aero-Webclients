@@ -46,11 +46,12 @@ header {
 	margin:5px;
 }
 
-.aero-body {
+#aero-body {
 	margin-left: 180px;
+	width: 100%;
 }
 
-.aero-body.sidebar-closed {
+#aero-body.sidebar-closed {
 	margin-left: 70px;
 }
 
