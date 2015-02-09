@@ -1,0 +1,39 @@
+.aero-body1 {
+	margin-left:0;
+}
+
+#log-footer1 {
+	position: fixed;
+    right: 0px;
+	bottom: 45px;
+	color: #fff;
+	text-align: center;
+	background-color: #333;
+	border: 1px solid #000;
+	border-left: 0;
+	z-index: 999;
+    font-family: arial;
+    padding: 10px 0;
+	width: 100%;
+	max-height: 450px;
+	margin-left: 180px;
+}
+
+#footer-navbar {
+	position: relative;
+	height: 35px;
+	width: 100%;
+	margin: 0 0 0 0;
+	border-left: 0;
+}
+
+.sidebar-left{
+float: left;
+
+}
+
+#filter-wrapper{
+    overflow:scroll;
+    border-right: 1px solid black;
+    height:85%;
+}

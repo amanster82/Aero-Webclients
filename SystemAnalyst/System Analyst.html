@@ -22,20 +22,10 @@
 		<header class='navbar navbar-inverse'>
 			<div id="logo">
 				<a href="#">
-					<img src="../common/images/AeroLogo.png"></img>
+					<img src="../common/images/AeroLogo.png">
 				</a>
 			</div>
 			<!-- Single button -->
-			<div class="btn-group">
-			  <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
-				System Analyst <span class="caret"></span>
-			  </button>
-			  <ul class="dropdown-menu" role="menu">
-				<li><a href="../ImageAnalyst/Image Analyst.html">Image Analyst</a></li>
-				<li><a href="System Analyst.html">System Analyst</a></li>
-				<li><a href="../Spectator/Spectator Client.html">Spectator</a></li>
-			  </ul>
-			</div>
 			
 			<div id="connection-status">
 				<div id="connection-view"></div>
@@ -44,14 +34,105 @@
 				</button>
 			</div>
 		</header>
-		<div class="sidebar-wrapper sidebar-closed">
+		<div class='aero-body1 '>
+			
+			<div class="sidebar-left"> 	
+				<div class="other-clients"  > 
+					<button type="button" id="connect-btn" class="btn btn-default btn-sm" style=" text-align : left; width: 140px; background-color: #e9eaed">
+						Antenna Tracker		
+					</button>
+ 				</div> 
+
+				<div class="other-clients"  > 
+					<button type="button" id="connect-btn" class="btn btn-default btn-sm" style=" text-align : left; width: 140px; background-color: #e9eaed">	
+						data..what?	
+					</button> 
+				</div>
+				
+				<div class="other-clients"  > 
+					<button type="button" id="connect-btn" class="btn btn-default btn-sm" style=" text-align : left; width: 140px; background-color: #e9eaed">		OBC	
+					</button> 
+				</div>
+				
+				<div class="other-clients"  > 
+					<button type="button" id="connect-btn" class="btn btn-default btn-sm" style=" text-align : left; width: 140px; background-color: #e9eaed">		
+						Autopilot		
+					</button>
+				</div>
+		
+				<div class="other-clients"  > 
+					<button type="button" id="connect-btn" class="btn btn-default btn-sm" style=" text-align : left; width: 140px; background-color: #e9eaed">
+						payload something				
+					</button> 
+				</div>
+		
+				<div class="other-clients"  >
+					 <button type="button" id="connect-btn" class="btn btn-default btn-sm" style=" text-align : left; width: 140px; background-color: #e9eaed">
+							WHAT ELSE 			
+					</button> 
+				</div> 
+
+			</div> <!--end of sidebar with all  -->
+
+
+			
+
+		<div class="btn-group" style="margin-top:0; float : right">
+			<button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
+				Pritorities <span class="caret"></span>
+			</button>
+			 <ul class="dropdown-menu" role="menu" type="button">
+				<li><button id="CRITICAL-filter-button" class="btn btn-danger" onclick="disp.applyFilter('CRITICAL');">Critical</button></li>
+				<li><button id="WARNING-filter-button" class="btn btn-warning" onclick="disp.applyFilter('WARNING');">Warning</button>	</li>
+				<li><button id="INFO-filter-button" class='btn btn-success' onclick="disp.applyFilter('INFO');">Info</button></li>
+				<li><button class='btn btn-info' id="DEBUG-filter-button" onclick="disp.applyFilter('DEBUG');">Debug</button></li>
+			  	<li><button class='btn btn-primary' id="SENT-filter-button" onclick="disp.applyFilter('SENT');">Sent</button></li>
+			  </ul>
 		</div>
-		<div id="aero-body" class="sidebar-closed">
-			<!-- YOUR CODE HERE -->
-		</div>
+		
+
+
+					<div class="col-sm-10" id="filter-wrapper">
+                           
+                            <table class="table" id="console-table">
+                                <tbody id="console-table-body">
+                                <tr class="warning"><td>WARNING</td><td>WEB</td><td>2015-02-08-16:08:14</td><td>Disconnected from server</td></tr>
+                                <tr class="info"><td>DEBUG</td><td>WEB</td><td>2015-02-08-16:07:53</td><td>Connecting to ws://192.168.72.10:24000</td></tr>
+                                <tr class="info"><td>DEBUG</td><td>WEB</td><td>2015-02-08-16:07:53</td><td>Connecting to ws://192.168.72.10:24000</td></tr>
+                                <tr class="info"><td>DEBUG</td><td>WEB</td><td>2015-02-08-16:07:53</td><td>Connecting to ws://192.168.72.10:24000</td></tr>
+                                <tr class="info"><td>DEBUG</td><td>WEB</td><td>2015-02-08-16:07:53</td><td>Connecting to ws://192.168.72.10:24000</td></tr>
+                                <tr class="info"><td>DEBUG</td><td>WEB</td><td>2015-02-08-16:07:53</td><td>Connecting to ws://192.168.72.10:24000</td></tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
 		<div class="push"></div> <!--Part of forcing a sticky Footer-->
-	</div>
-	<div id="log-footer" class="footer-closed sidebar-closed">
+			
+
+		<div class="console-bar" style="text-align:center; padding-top: 3px;" >   
+			
+
+			<form class="form-horizontal">
+  				<div class="form-group">
+    				<label  class="col-sm-2 control-label">Enter a Command</label>
+    				<div class="col-sm-10">
+    
+      					<input id='input-field'type='text' class='form-control'/>
+
+    				</div>
+  					
+  					<div class='col-sm-2'>
+                		<button id='input-field-button' class='btn btn-success'>Send</button>
+            		</div>
+  				</div>
+			</form>
+		</div>
+		
+		</div>
+
+		
+<!--	<div id="log-footer" class="footer-closed sidebar-closed">
 		<div id="column1">
 			<div id="logger-view-filters">
 				<ul id="filter-buttons">
@@ -69,7 +150,10 @@
 		<div id="column2">
 			<div id="logger-view"></div>
 		</div>
-	</div>
+	</div> -->
+	<div class="push"></div> <!--Part of forcing a sticky Footer-->
+	</div>	
+
 	<nav id="footer-navbar" class='navbar navbar-inverse'>
 		<div id="copyright">
 			<p> UVic AERO &copy; 2014 Aeronautical Engineering and Research Organization </p>
