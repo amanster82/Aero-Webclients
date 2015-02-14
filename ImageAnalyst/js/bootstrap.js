@@ -2,8 +2,7 @@ require.config({
 	baseUrl: "js/", // Base directory for this application
 	shim: {
 		bootstrapjs: { "deps" : ['jquery'] },
-		Footer: { "deps" : ['jquery'] },
-		Sidebar: { "deps" : ['jquery'] }
+		CommonDesign: { "deps" : ['jquery'] }
 	},
 	paths: {
 		// Load all of the common modules
@@ -16,14 +15,13 @@ require.config({
 		PacketFactory: '../../Common/js/PacketFactory',
 		ConnectionModel: '../../Common/js/models/ConnectionModel',
 		ConnectionView: '../../Common/js/views/ConnectionView',
-		Logger: '../../Common/js/Logger',
+		CommonDesign: '../../Common/js/CommonDesign',
 		LoggerCollection: '../../Common/js/collections/LoggerCollection',
 		LogMessageView: '../../Common/js/views/LogMessageView',
 		LoggerView: '../../Common/js/views/LoggerView',
 		LogMessageModel: '../../Common/js/models/LogMessageModel',
 		Util: '../../Common/js/Util',
-		Footer: '../../Common/js/Footer',
-		Sidebar: '../../Common/js/Sidebar'
+		Logger: '../../Common/js/Logger'
 	}
 });
 

@@ -47,12 +47,12 @@ header {
 }
 
 #aero-body {
-	margin-left: 180px;
+	padding-left: 180px;
 	width: 100%;
 }
 
 #aero-body.sidebar-closed {
-	margin-left: 70px;
+	padding-left: 70px;
 }
 
 

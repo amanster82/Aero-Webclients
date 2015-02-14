@@ -4,10 +4,9 @@ define([
 	'backbone',
 	'bootstrapjs',
 	'Network',
-	'Logger',
-	'Footer',
-	'Sidebar'
-], function($, _, Backbone, Bootstrap, Network, Logger, Footer, Sidebar){
+	'CommonDesign',
+	'Logger'
+], function($, _, Backbone, Bootstrap, Network, CommonDesign, Logger){
 
 	var Initialize = function () {
 	
