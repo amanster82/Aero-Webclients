@@ -9,6 +9,7 @@ require.config({
 		jquery: '../../Common/js/libs/jquery/jquery',
 		underscore: '../../Common/js/libs/underscore/underscore',
 		backbone: '../../Common/js/libs/backbone/backbone',
+		async: '../../Common/js/libs/require/async',
 		bootstrapjs: '../../Common/js/libs/bootstrap/bootstrap.min',
 		Network: '../../Common/js/Network',
 		PacketBuffer: '../../Common/js/PacketBuffer',
