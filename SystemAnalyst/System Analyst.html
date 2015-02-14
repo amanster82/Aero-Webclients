@@ -26,7 +26,16 @@
 				</a>
 			</div>
 			<!-- Single button -->
-			
+			<div class="btn-group">
+			  <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
+				Spectator <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="../ImageAnalyst/Image Analyst.html">Image Analyst</a></li>
+				<li><a href="../SystemAnalyst/System Analyst.html">System Analyst</a></li>
+				<li><a href="Spectator Client.html">Spectator</a></li>
+			  </ul>
+			</div>			
 			<div id="connection-status">
 				<div id="connection-view"></div>
 				<button type="button" id="connect-btn" class="btn btn-dark btn-sm">
@@ -34,7 +43,9 @@
 				</button>
 			</div>
 		</header>
-		<div class='aero-body1 '>
+		<div class="sidebar-wrapper sidebar-closed">
+		</div>
+		<div id='aero-body' class='sidebar-closed'>
 			
 			<div class="sidebar-left"> 	
 				<div class="other-clients"  > 
@@ -130,9 +141,7 @@
 		</div>
 		
 		</div>
-
-		
-<!--	<div id="log-footer" class="footer-closed sidebar-closed">
+	<div id="log-footer" class="footer-closed sidebar-closed">
 		<div id="column1">
 			<div id="logger-view-filters">
 				<ul id="filter-buttons">
@@ -150,7 +159,7 @@
 		<div id="column2">
 			<div id="logger-view"></div>
 		</div>
-	</div> -->
+	</div>
 	<div class="push"></div> <!--Part of forcing a sticky Footer-->
 	</div>	
 
