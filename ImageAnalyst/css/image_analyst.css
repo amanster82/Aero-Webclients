@@ -1,0 +1,46 @@
+#image-container {
+	width: 60%;
+	height: 90%;
+	margin: 25px 0 0 20px;
+	padding: 10px;
+	border-style: solid;
+	border-color: #000;
+	border-radius: 15px;
+	float: left;
+}
+
+#aero-body {
+	background-color: #333;
+}
+
+#imagequeue-container {
+	width: 30%;
+	height: 90%;
+	margin: 25px 20px 0px 0px;
+	padding: 10px;
+	border-style: solid;
+	border-radius: 15px;
+	border-color: #000;
+	overflow: auto;
+	float:right;
+}
+
+#image-body {
+	height: 90%;
+	border-style: solid;
+}
+
+#image-footer {
+	display: flex;
+	justify-content: space-between;
+	top: 10px;
+	height: 10%;
+}
+
+
+#passbutton, #failbutton, #nextbutton, #prevbutton {
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 12px;
+}
