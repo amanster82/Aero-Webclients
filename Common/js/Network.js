@@ -82,7 +82,7 @@ define([
 		},
 		
 		onmessage: function(msg) {
-			// Handle packet receive here
+			PacketFactory.PacketReceived(msg);
 		},
 		
 		onclose: function(event) {
@@ -206,11 +206,12 @@ define([
 	};
 
 	/**
-	  * Handles calling the correct function corresponding to a received packet
-	  * @private
+	  * Sets up a callback on an object with a function to call when
+	  * a particular packet gets received.
+	  * @export
 	  */
-	var Recv = function(packet) {
-
+	var Recv = function(object, type, callback) {
+		PacketFactory.BindPacketEvent(object, type, callback)
 	};
 
 	/**
@@ -234,6 +235,7 @@ define([
 		Initialize: Initialize,
 		ConnectToServer: ConnectToServer,
 		Send: Send,
-		ClientType: ClientTypeEnum
+		ClientType: ClientTypeEnum,
+		Recv: Recv
 	};
 });

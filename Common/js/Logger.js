@@ -15,7 +15,7 @@ define([
 		logView;
 
 	/**
-	  * Inititializes the Network
+	  * Inititializes the logger
 	  * @export
 	  */	
 	var Initialize = function() {

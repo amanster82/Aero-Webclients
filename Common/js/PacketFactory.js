@@ -6,6 +6,16 @@ define([
 	'PacketBuffer',
 ], function($, _, Backbone, Logger, PacketBuffer){
 
+	var PacketEventListener = {};
+
+	/**
+	  * Used to set up the Packet Factory to support event handling, etc
+	  * @export
+	  */
+	Initialize = function() {
+		_.extend(PacketEventListener, Backbone.Events);
+	}
+
 	/**
 	  * Factory method. Creates a base packet and then extends it with the requested packets
 	  * methods and properties
@@ -24,6 +34,43 @@ define([
 			_.extend(pkt, PacketMapping[packet]);		
 		
 		return pkt;
+	}
+
+	/**
+	  * Returns of the object of the parsed packet
+	  * @export
+	  */
+	Deserialize = function(message) {
+		return JSON.parse(message);
+	}
+
+	/**
+	  * Binds an event listener for a particular packet type.
+	  * Arguments are the object that is listening, the type of packet, and the callback function
+	  * @export
+	  */
+	BindPacketEvent = function(object, packet, functor) {
+		if(object !== undefined && packet !== undefined && functor !== undefined)
+			PacketEventListener.listenTo(object, packet, functor);
+	}
+
+	/**
+	  * Called with a JSON payload when a packet is received and must be propogated
+	  * @export
+	  */
+	PacketReceived = function(message) {
+
+		var Packet = DeserializePacketType(message);
+
+		if(Packet === undefined)
+			return;
+
+		if(typeof Packet.image === "object")
+			PacketEventListener.trigger("image", Packet);
+		else if(typeof Packet.target ==="object")
+			PacketEventListener.trigger("target", Packet);
+		else if(typeof Packet.config ==="object")
+			PacketEventListener.trigger("config", Packet);
 	}
 
 	/**
@@ -82,7 +129,6 @@ define([
 		Buffer: undefined,
 		
 		recv: function() {
-		
 		},
 		
 		serialize: function(clientType) {
@@ -102,11 +148,17 @@ define([
 		"PacketClientType" : PacketClientType
 	};
 
+
+
 	/**
 	  * API Mapping
 	  * @return
 	  */
 	return {
-		Create: Create
+		Create: Create,
+		Initialize: Initialize,
+		Deserialize: Deserialize,
+		BindPacketEvent: BindPacketEvent,
+		PacketReceived: PacketReceived
 	};
 });
