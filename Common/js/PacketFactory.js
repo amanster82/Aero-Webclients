@@ -60,7 +60,7 @@ define([
 	  */
 	PacketReceived = function(message) {
 
-		var Packet = DeserializePacketType(message);
+		var Packet = Deserialize(message);
 
 		if(Packet === undefined)
 			return;

@@ -82,7 +82,16 @@ define([
 		},
 		
 		onmessage: function(msg) {
-			PacketFactory.PacketReceived(msg);
+			if(msg.data instanceof ArrayBuffer)
+			{
+				var data = new DataView(msg.data);
+				var json = "";
+
+				for(var i = 0; i < msg.data.byteLength; i++)
+					json += String.fromCharCode(data.getUint8(i, true));
+
+				PacketFactory.PacketReceived(json);
+			}
 		},
 		
 		onclose: function(event) {

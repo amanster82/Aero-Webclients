@@ -5,8 +5,9 @@ define([
 	'bootstrapjs',
 	'Network',
 	'CommonDesign',
-	'Logger'
-], function($, _, Backbone, Bootstrap, Network, CommonDesign, Logger){
+	'Logger',
+	'ImageAnalyst'
+], function($, _, Backbone, Bootstrap, Network, CommonDesign, Logger, ImageAnalyst){
 
 	var Initialize = function () {
 	
@@ -15,6 +16,8 @@ define([
 		
 		Network.Initialize();
 		Network.ConnectToServer("ImageAnalyst");
+
+		ImageAnalyst.Initialize();
 		
 		console.log("All systems go");
 	}

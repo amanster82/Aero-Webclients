@@ -22,7 +22,11 @@ require.config({
 		LoggerView: '../../Common/js/views/LoggerView',
 		LogMessageModel: '../../Common/js/models/LogMessageModel',
 		Util: '../../Common/js/Util',
-		Logger: '../../Common/js/Logger'
+		Logger: '../../Common/js/Logger',
+		ImageAnalyst: 'ImageAnalyst',
+		ImageView: 'views/imageView',
+		ImageCollection: 'collections/imageCollection',
+		ImageModel: 'models/imageModel'
 	}
 });
 
