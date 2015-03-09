@@ -26,7 +26,8 @@ require.config({
 		ImageAnalyst: 'ImageAnalyst',
 		ImageView: 'views/imageView',
 		ImageCollection: 'collections/imageCollection',
-		ImageModel: 'models/imageModel'
+		ImageModel: 'models/imageModel',
+		ImageQueueView: 'views/ImageQueueView'
 	}
 });
 

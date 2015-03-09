@@ -49,42 +49,44 @@
 		<div class="sidebar-wrapper sidebar-closed">
 		</div>
 		<div id="aero-body" class="sidebar-closed">
-			<div id="image-container">
-				<div id="image-body">
-					<!-- Images go here -->
+			<div id="image-analyst" style="height: 100%">
+				<div id="image-container">
+					<div id="image-body">
+						<!-- Images go here -->
+					</div>
+					<div id="image-footer">
+						<span>
+							<button type="button" class="btn btn-default btn-md" id="passbutton">
+								<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Pass
+							</button>
+						</span>
+						<span>
+							<button type="button" class="btn btn-default btn-md" id="failbutton">
+								 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Fail
+							</button>
+						</span>
+						<span>
+							<button type="button" class="btn btn-default btn-md" id="prevbutton">
+								 <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Prev
+							</button>
+						</span>
+						<span>
+							<button type="button" class="btn btn-default btn-md" id="nextbutton">
+								 <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Next
+							</button>
+						</span>
+					</div>
 				</div>
-				<div id="image-footer">
-					<span>
-						<button type="button" class="btn btn-default btn-md" id="passbutton">
-					  		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Pass
-						</button>
-					</span>
-					<span>
-						<button type="button" class="btn btn-default btn-md" id="failbutton">
-					 		 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Fail
-						</button>
-					</span>
-					<span>
-						<button type="button" class="btn btn-default btn-md" id="prevbutton">
-					 		 <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Prev
-						</button>
-					</span>
-					<span>
-						<button type="button" class="btn btn-default btn-md" id="nextbutton">
-					 		 <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Next
-						</button>
-					</span>
+				<div id="imageinfo-container">
+					<h1 id="imageinfo-header">Target Info</h1>
+					<div id="imageinfo-body">
+						<h2> Color: Blue </h2>
+						<h2> Shape: Square </h2>
+					</div>
 				</div>
-			</div>
-			<div id="imageinfo-container">
-				<h1 id="imageinfo-header">Target Info</h1>
-				<div id="imageinfo-body">
-					<h2> Color: Blue </h2>
-					<h2> Shape: Square </h2>
+				<div id="imagequeue-container">
+					<!-- IMG Queue stuff goes here -->
 				</div>
-			</div>
-			<div id="imagequeue-container">
-				<!-- IMG Queue stuff goes here -->
 			</div>
 		</div>
 		<div class="push"></div> <!--Part of forcing a sticky Footer-->

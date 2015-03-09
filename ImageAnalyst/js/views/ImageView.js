@@ -1,8 +1,9 @@
 define([
 	'jquery',
 	'underscore',
-	'backbone'
-], function($, _, Backbone){
+	'backbone',
+	'ImageQueueView'
+], function($, _, Backbone, ImageQueueView){
 
 	/**
 	  * @extends Backbone.View
@@ -10,13 +11,13 @@ define([
 	var ImageView = Backbone.View.extend({
 
 		// The div to update
-		el: "",
+		el: "#image-analyst",
 
 		events: {
 		},
 
 		initialize: function() {
-			
+
 			// Update when a new model is added to the collection
 			this.listenTo(this.collection, "add", this.add);
 		},
@@ -28,6 +29,10 @@ define([
 		},
 
 		add: function(image) {
+
+			var view = new ImageQueueView({model: image});
+
+			this.$el.find("#imagequeue-container").prepend(view.render().el);
 		},
 	});
 

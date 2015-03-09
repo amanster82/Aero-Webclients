@@ -34,14 +34,25 @@ define([
 	  * @private
 	  */	
 	var ImageReceived = function(imagedata) {
-		Logger.Log( { message : "Image received" } )
-	}
+		AddImage(imagedata.image);
+	};
+
+	/**
+	  * Add an image to the image collection given an object containing image data
+	  * @export
+	  */	
+	var AddImage = function(image) {
+		imageCollection.add({ width: image.width, height: image.height, latitude: image.latitude, longitude: image.longitude,
+								pitchAngle: image.pitchangle, guid: image.guid, rollAngle: image.rollangle, atltitude: image.atltitude,
+								timestamp: image.timestamp, data: image.data});
+	};
 
 	/**
 	  * API Mapping
 	  * @return
 	  */
 	return {
-		Initialize: Initialize
+		Initialize: Initialize,
+		AddImage: AddImage
 	};
 });

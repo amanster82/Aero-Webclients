@@ -223,7 +223,7 @@ input[id='success']:checked + label {
 }
 
 .log-severity-critical {
-	color: red;
+	color: crimson;
 }
 
 .log-severity-warning {
@@ -231,7 +231,11 @@ input[id='success']:checked + label {
 }
 
 .log-severity-success {
-	color: green;
+	color: lightgreen;
+}
+
+.log-severity-debug {
+	color: lightblue;
 }
 
 .push {
@@ -297,11 +301,11 @@ input[id='success']:checked + label {
 }
 
 .connection-state-connected {
-	color: green;
+	color: limegreen;
 }
 
 .connection-state-disconnected {
-	color: red;
+	color: crimson;
 }
 
 .btn-dark {

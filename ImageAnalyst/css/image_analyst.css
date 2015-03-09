@@ -26,6 +26,11 @@
 	float:right;
 }
 
+#imagequeue-container span div {
+	color: white;
+	margin: 5px 0;
+}
+
 #image-body {
 	height: 90%;
 }
