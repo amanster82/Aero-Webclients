@@ -41,7 +41,7 @@ define([
 	  * @export
 	  */
 	Deserialize = function(message) {
-		return JSON.parse(message);
+		return $.parseJSON(message);;
 	}
 
 	/**
@@ -51,7 +51,7 @@ define([
 	  */
 	BindPacketEvent = function(object, packet, functor) {
 		if(object !== undefined && packet !== undefined && functor !== undefined)
-			PacketEventListener.listenTo(object, packet, functor);
+			PacketEventListener.on(packet, functor, object);
 	}
 
 	/**

@@ -24,7 +24,7 @@ define([
 		imageCollection = new ImageCollection({ model: ImageModel });
 		imageView = new ImageView({ collection: imageCollection });
 
-		Network.Recv("image", ImageReceived);
+		Network.Recv(this, "image", ImageReceived);
 
 		Logger.Log({ severity: 'success', message: "Image Analyst started" });
 	};
@@ -34,7 +34,7 @@ define([
 	  * @private
 	  */	
 	var ImageReceived = function(imagedata) {
-		Logger.Log( { message : "image received" } )
+		Logger.Log( { message : "Image received" } )
 	}
 
 	/**

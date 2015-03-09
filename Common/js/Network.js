@@ -44,6 +44,8 @@ define([
 	  * @export
 	  */	
 	var Initialize = function() {
+		PacketFactory.Initialize();
+		
 		Connection = new ConnectionModel();
 
 		var ConnectView = new ConnectionView({ model:Connection });
@@ -87,8 +89,10 @@ define([
 				var data = new DataView(msg.data);
 				var json = "";
 
-				for(var i = 0; i < msg.data.byteLength; i++)
+				for(var i = 4; i < msg.data.byteLength; i++)
 					json += String.fromCharCode(data.getUint8(i, true));
+
+				Logger.Log( { message: "Received " + msg.data.byteLength + " Byte length json string"} );
 
 				PacketFactory.PacketReceived(json);
 			}
