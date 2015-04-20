@@ -27,13 +27,175 @@
 	border-left: 0;
 }
 
-.sidebar-left{
-float: left;
+.sidebar-right{
+float: right;
+width: 20%;
+position: absolute;
+top: 60px;
+right: -63px;
+height: 100%;
+margin-right: 0px;
 
+}
+
+.logbar{
+	width: 80%;
+	background: wheat;
+	height: 100%;
+	margin: 0 0 0 25px;
 }
 
 #filter-wrapper{
     overflow:scroll;
     border-right: 1px solid black;
     height:85%;
+}
+
+
+div.sidebar-right ul {
+  text-align: left;
+  display: inline;
+  margin: 0;
+  padding: 15px 100px 17px 0;
+  list-style: none;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+div.sidebar-right ul li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 15px 75px;
+  background: wheat;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+div.sidebar-right ul li:hover {
+  background: #555;
+  color: #fff;
+}
+
+
+div.sidebar-right ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  /*width: 150px;*/
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+div.sidebar-right ul li ul li { 
+  background: #555; 
+  display: block; 
+  color: #fff;
+  text-shadow: 0 -1px 0 #000;
+}
+div.sidebar-right ul li ul li:hover { background: #666; }
+
+div.sidebar-right ul li:hover ul {
+  display: block;
+  
+  opacity: 1;
+  visibility: visible;
+}
+
+
+input[type=checkbox] {
+    display:none;
+}
+ 
+input[type=checkbox] + label {
+    display:inline-block;
+    margin:-2px;
+    padding: 4px 12px;
+    margin-bottom: 10px;
+    margin-left:3px;
+    margin-right:3px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    outline-color: #000000;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #888888;
+    border-color: ;
+    background-repeat: repeat-x;
+    border: 1px solid #888888;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#ffe6e6e6',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input[id='data-center'] + label {
+    padding: 4px 7px;
+}
+ 
+ input[id='antenna-tracker'] + label {
+	padding: 5px 7px;
+}
+ 
+input[id='one']:checked + label {
+       background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+        background-color:#428BCA;
+        border-color:#3071A9;
+}
+
+input[id='data-center']:checked + label {
+       background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+        background-color:#F0AD4E;
+        border-color: #EC971F;
+}
+
+input[id='two']:checked + label {
+       background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+        background-color:#D9534F;
+        border-color: #C9302C;
+}
+
+input[id='antenna-tracker']:checked + label {
+       background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+	background-color: rgba(55, 185, 30, 1);
+	border-color: rgba(0, 99, 19, 1);
 }
