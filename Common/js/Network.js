@@ -14,7 +14,7 @@ define([
 	  * @properties
 	  * @private
 	  */
-	var ServerIP = "127.0.0.1",
+	var ServerIP = "datacenter.uvicaero.com",
 		ServerPort = "24000",
 		UseSSL = false, // Disabled by default so network can be debugged more easily
 		UseSSLPort = "24001",
