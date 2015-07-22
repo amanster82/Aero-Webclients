@@ -27,9 +27,9 @@ require.config({
 		Util: '../../Common/js/Util',
 		Logger: '../../Common/js/Logger',
 		ImageAnalyst: 'ImageAnalyst',
-		ImageView: 'views/imageView',
-		ImageCollection: 'collections/imageCollection',
-		ImageModel: 'models/imageModel',
+		ImageView: 'views/ImageView',
+		ImageCollection: 'collections/ImageCollection',
+		ImageModel: 'models/ImageModel',
 		ImageQueueView: 'views/ImageQueueView',
 		ImageQueueItemView: 'views/ImageQueueItemView',
 		RecognitionTuning: 'views/RecognitionTuning'
