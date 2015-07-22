@@ -125,18 +125,42 @@
 }
 
 .queued-image:hover {
-	background: #989898;
+	background: #e0e0e0;
+}
+
+.queued-image-properties {
+	display: inline-block;
+}
+
+.queued-image-properties:not(:first-child) {
+	margin-left: 15px;
 }
 
 .queued-image-title {
-	display: inline-block;
 	font-size: 11pt;
 	font-weight: bold;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .queued-image-value {
-	display: inline-block;
 	font-size: 12pt;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.queued-image-tag {
+	text-transform: uppercase;
+	color: #545454;
+	font-size: 9pt;
+	display: inline-block;
+	float: right;
+	vertical-align: middle;
+	padding: 5px;
+	background-color: #DDD;
+	border: 1px solid #C0C0C0;
+	margin-right: 5px;
+	margin-top: -3px;
 }
 
 #slider-wrapper {
