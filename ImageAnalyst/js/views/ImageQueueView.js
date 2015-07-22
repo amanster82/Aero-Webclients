@@ -1,33 +1,36 @@
 define([
 	'jquery',
 	'underscore',
-	'backbone'
-], function($, _, Backbone){
+	'backbone',
+	'ImageQueueItemView'
+], function($, _, Backbone, QueueItemView){
 
 	/**
-	  * Used to render image models when displayed in the image queue
 	  * @extends Backbone.View
 	  */
 	var ImageQueueView = Backbone.View.extend({
 
 		// The tag to use
-		tagName: "span",
+		el: "#image-queue-view",
 
 		initialize: function() {
 
-			// Listen to any changes on the model
-			this.listenTo(this.model, "change", this.render);
+			// Update when a new model is added to the collection
+			this.listenTo(this.collection, "add", this.add);
 		},
 
 		render: function() {
-			var view = "<div class=\"queued-image\">" + this.model.get("guid") + "</div>";
-
-			// Update the UI when there's a change
-			this.$el.html(view);
 
 			// Return this in order to allow for render chaining
 			return this;
 		},
+
+		add: function(image) {
+
+			var view = new QueueItemView({model: image});
+
+			this.$el.find("#imagequeue-container").prepend(view.render().el);
+		}
 
 	});
 

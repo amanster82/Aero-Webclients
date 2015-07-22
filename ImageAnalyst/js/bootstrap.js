@@ -31,6 +31,7 @@ require.config({
 		ImageCollection: 'collections/imageCollection',
 		ImageModel: 'models/imageModel',
 		ImageQueueView: 'views/ImageQueueView',
+		ImageQueueItemView: 'views/ImageQueueItemView',
 		RecognitionTuning: 'views/RecognitionTuning'
 	}
 });
