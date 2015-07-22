@@ -1,0 +1,48 @@
+.analyst-body {
+	padding: 0;
+	height: 100%;
+}
+
+.body-header {
+	text-align: center;
+	font-size: 16pt;
+	padding: 6px 0 10px 0;
+}
+
+.body-content {
+	padding: 10px;
+	height: 100%;
+}
+
+.current-image {
+	height: 70%;
+}
+
+.image-container {
+	height: 100%;
+	width: 100%;
+	padding: 0 10px 10px 10px;
+}
+
+.image-container canvas {
+	width: 100%;
+	height: 100%;
+}
+
+.image-properties {
+	height: 30%;
+}
+
+.image-properties-header {
+	text-align: center;
+	font-size: 14pt;
+}
+
+#slider-wrapper {
+	text-align: center;
+}
+
+.slider {
+    margin: 25px auto 5px auto;
+    width: 50%;
+}

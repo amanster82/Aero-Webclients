@@ -6,15 +6,17 @@ define([
 	'Logger',
 	'ImageView',
 	'ImageCollection',
-	'ImageModel'
-], function($, _, Backbone, Network, Logger, ImageView, ImageCollection, ImageModel) {
+	'ImageModel',
+	'RecognitionTuning'
+], function($, _, Backbone, Network, Logger, ImageView, ImageCollection, ImageModel, RecognitionTuning) {
 
 	/**
 	  * Singletons for the main view and collection objects
 	  * @private
 	  */	
 	var imageCollection,
-		imageView;
+		imageView,
+		tuningView;
 
 	/**
 	  * Inititializes the Network
@@ -23,6 +25,7 @@ define([
 	Initialize = function() {
 		imageCollection = new ImageCollection({ model: ImageModel });
 		imageView = new ImageView({ collection: imageCollection });
+		tuningView = new RecognitionTuning();
 
 		Network.Recv(this, "image", ImageReceived);
 

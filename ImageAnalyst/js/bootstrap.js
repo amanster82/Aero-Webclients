@@ -2,11 +2,14 @@ require.config({
 	baseUrl: "js/", // Base directory for this application
 	shim: {
 		bootstrapjs: { "deps" : ['jquery'] },
-		CommonDesign: { "deps" : ['jquery'] }
+		CommonDesign: { "deps" : ['jquery'] },
+		jqueryui: { "deps" : ['jquery']},
+		RecognitionTuning: { "deps" : ['jqueryui']}
 	},
 	paths: {
 		// Load all of the common modules
 		jquery: '../../Common/js/libs/jquery/jquery',
+		jqueryui: '../../Common/js/libs/jquery/ui',
 		underscore: '../../Common/js/libs/underscore/underscore',
 		backbone: '../../Common/js/libs/backbone/backbone',
 		async: '../../Common/js/libs/require/async',
@@ -27,7 +30,8 @@ require.config({
 		ImageView: 'views/imageView',
 		ImageCollection: 'collections/imageCollection',
 		ImageModel: 'models/imageModel',
-		ImageQueueView: 'views/ImageQueueView'
+		ImageQueueView: 'views/ImageQueueView',
+		RecognitionTuning: 'views/RecognitionTuning'
 	}
 });
 

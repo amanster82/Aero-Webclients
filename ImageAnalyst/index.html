@@ -9,6 +9,8 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<!-- Bootstrap CSS file -->
 	<link href="../Common/css/bootstrap.min.css" rel="stylesheet">
+	<!-- JQuery UI -->
+	<link href="../Common/css/jquery-ui.css" rel="stylesheet">
 	<!-- Fontawesome -->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 	<!-- Aero CSS file -->
@@ -67,7 +69,66 @@
 		</div>
 		<div id="aero-body" class="sidebar-closed">
 			<div id="image-analyst" style="height: 100%">
-		
+				<div class="col-md-7 analyst-body">
+					<div class="body-header">
+					Current Image
+					</div>
+					<div class="body-content" style="height:92%">
+						<div class="current-image">
+							<div class="image-container">
+								<canvas></canvas>
+							</div>
+						</div>
+						<div class="image-properties">
+							<div class="col-md-6">
+								<div class="image-properties-header">
+								Properties
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="image-properties-header">
+								Targets
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 analyst-body">
+					<div class="body-header">
+					Images
+					</div>
+				</div>
+				<div id="recognition-tuning" class="col-md-2 analyst-body">
+					<div class="body-header">
+					Tuning
+					</div>
+					<div id='slider-wrapper'>
+						<div id="gaussian" class="slider"></div>
+						<div class="slider-value">
+							Gaussian: <span id="gaussian-val"></span>
+						</div>
+						<div id="canny-low" class="slider"></div>
+						<div class="slider-value">
+							Canny Low: <span id="canny-low-val"></span>
+						</div>
+						<div id="canny-high" class="slider"></div>
+						<div class="slider-value">
+							Canny High: <span id="canny-high-val"></span>
+						</div>
+						<div id="hough-vote" class="slider"></div>
+						<div class="slider-value">
+							Hough Vote: <span id="hough-vote-val"></span>
+						</div>
+						<div id="hough-length" class="slider"></div>
+						<div class="slider-value">
+							Hough Min Length: <span id="hough-length-val"></span>
+						</div>
+						<div id="hough-distance" class="slider"></div>
+						<div class="slider-value">
+							Hough Min Distance: <span id="hough-distance-val"></span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="push"></div> <!--Part of forcing a sticky Footer-->
