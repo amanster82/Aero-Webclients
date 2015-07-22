@@ -34,6 +34,20 @@ define([
 			// Update the UI when there's a change
 			this.$el.html(this.template(this.model.attributes));
 
+			this.$el.draggable({
+				start: function(e, ui) {
+					$(this).css( {"display": "none"});
+				},
+				stop: function(e, ui) {
+					$(this).css( {"display": "block"});
+				},
+				cursor: 'pointer',
+				helper: 'clone',
+				scroll: false,
+				tolerance: 'pointer',
+				revert: true
+			});
+
 			// Return this in order to allow for render chaining
 			return this;
 		}

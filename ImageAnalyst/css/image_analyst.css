@@ -114,6 +114,19 @@
 	padding-top: 10px;
 }
 
+.imagequeue.droppable-active {
+	background: #989898;
+}
+
+.imagequeue.droppable-hover {
+	border: 1px solid ##64b5f6;
+}
+
+.imagequeue-placeholder {
+	height: 43px;
+	background: #989898;
+}
+
 #imagequeue-confirmed {
 	border-right: solid 1px #989898;
 }
@@ -122,6 +135,7 @@
 	padding: 10px 0 10px 10px;
 	margin: 0 10px;
 	cursor: pointer;
+	width: 290px;
 }
 
 .queued-image:hover {

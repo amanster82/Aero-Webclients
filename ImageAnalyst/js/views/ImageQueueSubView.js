@@ -11,10 +11,21 @@ define([
 	var ImageQueueSubView = Backbone.View.extend({
 
 
+		events: {
+
+			'drop .imagequeue': 'drop',
+
+		},
+
 		initialize: function() {
 
 			// Update when a new model is added to the collection
 			this.listenTo(this.collection, "add", this.add);
+
+			this.$el.find('.imagequeue').droppable({
+				activeclass: "droppable-active",
+				hoverclass: "droppable-hover"
+			});
 		},
 
 		render: function() {
@@ -27,7 +38,23 @@ define([
 
 			var view = new QueueItemView({model: image});
 
-			this.$el.prepend(view.render().el);
+			this.$el.find('.imagequeue').prepend(view.render().el);
+		},
+
+		dragStart: function(event,data, clone, element) {
+			console.log("drag start");
+		},
+		dragEnter: function(event, clone, element) {
+			console.log("drag enter");
+		},
+		dragLeave: function(event, clone, element) {
+			console.log("drag leave");
+		},
+		drop: function(event, ui) {
+			console.log("drag drop");
+		},
+		dragEnd: function(event, clone, element) {
+			console.log("drag end");
 		}
 
 	});
