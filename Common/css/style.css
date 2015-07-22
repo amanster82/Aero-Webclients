@@ -93,6 +93,20 @@ header {
 	padding: 5px 5px 5px 40px;
 }
 
+.sidebar-item > button {
+	background: transparent none repeat scroll 0% 0%;
+	border: medium none;
+}
+
+.sidebar-item .form-control {
+	width: 200px;
+}
+
+.sidebar .popover {
+	margin-left: 15px;
+	color: #424242;
+}
+
 .sidebar-item:hover {
 	background: #424242;
 }
@@ -300,7 +314,7 @@ input[id='success']:checked + label {
 }
 
 .push {
-    height: 42px; /* .push must be the same height as .footer */
+    height: 4px; /* .push must be the same height as .footer */
 }
 
 .btn-group {

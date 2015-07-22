@@ -22,12 +22,23 @@ $('#log-footer').click(function(event) {
 $('.sidebar-wrapper').click(function(event) {
 
 	// Stops the sidebar from receiving specific events
-	//if($(event.target).is(".filter-button") || $(event.target).is("label"))
-	//	return;
+	if(!$(event.target).is(".sidebar-wrapper"))
+		return;
 
 	$(this).toggleClass('sidebar-closed');
 	$('#log-footer').toggleClass('sidebar-closed');
 	$('#aero-body').toggleClass('sidebar-closed');
+});
+
+$('.sidebar-item button').click(function(event) {
+	event.stopPropagation();
+	if($(this).data("toggle") === "popover") {
+		$(this).popover('toggle');
+	}
+});
+
+$('.sidebar-item .popover').click(function(event) {
+	event.stopPropagation();
 });
 
 // Because the page is static and doesn't scroll, this function is very simple for now

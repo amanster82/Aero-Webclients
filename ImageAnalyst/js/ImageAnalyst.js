@@ -2,12 +2,13 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
+	'bootstrapjs',
 	'Network',
 	'Logger',
 	'ImageView',
 	'ImageQueueView',
 	'RecognitionTuning'
-], function($, _, Backbone, Network, Logger, ImageView, ImageQueueView, RecognitionTuning) {
+], function($, _, Backbone, bootstrap, Network, Logger, ImageView, ImageQueueView, RecognitionTuning) {
 
 	/**
 	  * Singletons for the main view and collection objects
@@ -31,6 +32,12 @@ define([
 		Network.Recv(this, "image", ImageReceived);
 
 		Logger.Log({ severity: 'success', message: "Image Analyst started" });
+
+		 $('#send-test-image').popover({
+		 	trigger: 'manual',
+		 	html: true,
+		 	content: '<div class="input-group"><span class="input-group-addon" id="basic-addon1">URL</span><input type="text" class="form-control" placeholder="URL" aria-describedby="basic-addon1"><span class="input-group-btn"><button class="btn btn-default" type="button">Go!</button></span></div>'
+		 });
 	};
 
 	/**
