@@ -46,7 +46,7 @@ function ResizeSidebar() {
 function ResizeBody() {
 	var scrollTop = window.pageYOffset;
 	var viewportHeight = document.documentElement.clientHeight;
-	var bodyHeight = 152; // Set to the header + footer + logger heighs (default)
+	var bodyHeight = 147; // Set to the header + footer + logger heighs (default)
 	
 	var visibleBodyHeight = Math.max(0, bodyHeight - scrollTop);
 	$('#aero-body').height(viewportHeight - visibleBodyHeight);

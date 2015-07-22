@@ -9,6 +9,8 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<!-- Bootstrap CSS file -->
 	<link href="../Common/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Fontawesome -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 	<!-- Aero CSS file -->
 	<link href="../Common/css/style.css" rel="stylesheet">
 	<!-- Image Analyst CSS file -->
@@ -47,46 +49,25 @@
 			<!--<END>NAVBAR-->
 		</header>
 		<div class="sidebar-wrapper sidebar-closed">
+			<span class="sidebar-static-header">
+			Menu
+			</span>
+			<div class="sidebar-group">
+				<div class="sidebar-header">
+				Actions
+				</div>
+				<div class="sidebar-item">
+					<span id="send-test-image">Send test image</span>
+				</div>
+			</div>
+			<span class="sidebar-trigger">
+				<i class="fa fa-chevron-right"></i>
+				<i class="fa fa-chevron-left"></i>
+			</span>
 		</div>
 		<div id="aero-body" class="sidebar-closed">
 			<div id="image-analyst" style="height: 100%">
-				<div id="image-container">
-					<div id="image-body">
-						<!-- Images go here -->
-					</div>
-					<div id="image-footer">
-						<span>
-							<button type="button" class="btn btn-default btn-md" id="passbutton">
-								<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Pass
-							</button>
-						</span>
-						<span>
-							<button type="button" class="btn btn-default btn-md" id="failbutton">
-								 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Fail
-							</button>
-						</span>
-						<span>
-							<button type="button" class="btn btn-default btn-md" id="prevbutton">
-								 <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Prev
-							</button>
-						</span>
-						<span>
-							<button type="button" class="btn btn-default btn-md" id="nextbutton">
-								 <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Next
-							</button>
-						</span>
-					</div>
-				</div>
-				<div id="imageinfo-container">
-					<h1 id="imageinfo-header">Target Info</h1>
-					<div id="imageinfo-body">
-						<h2> Color: Blue </h2>
-						<h2> Shape: Square </h2>
-					</div>
-				</div>
-				<div id="imagequeue-container">
-					<!-- IMG Queue stuff goes here -->
-				</div>
+		
 			</div>
 		</div>
 		<div class="push"></div> <!--Part of forcing a sticky Footer-->
