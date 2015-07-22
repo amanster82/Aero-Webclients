@@ -10,14 +10,14 @@ define([
 	  */
 	var ImageQueueItemView = Backbone.View.extend({
 
-		template: _.template("<div class='queued-imag'>" +
+		template: _.template("<div class='queued-image'>" +
 									"<div class='queued-image-properties'>" +
 										"<div class='queued-image-title'>ID:</div>" +
-										"<div class='queued-image-value'>1</div>" +
+										"<div class='queued-image-value'><%= imageID %></div>" +
 									"</div>" +
 									"<div class='queued-image-properties'>" +
 										"<div class='queued-image-title'>Targets:</div>" +
-										"<div class='queued-image-value'>2</div>" +
+										"<div class='queued-image-value'><%= targetCount %></div>" +
 									"</div>" +
 									"<% if(typeof(tag) !== 'undefined') { %>" +
 										"<div class='queued-image-tag'><%= tag %></div>" +

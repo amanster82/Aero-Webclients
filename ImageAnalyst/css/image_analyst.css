@@ -147,6 +147,7 @@
 	font-size: 12pt;
 	display: inline-block;
 	vertical-align: middle;
+	margin-left: 5px;
 }
 
 .queued-image-tag {
