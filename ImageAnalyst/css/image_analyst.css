@@ -27,15 +27,116 @@
 .image-container canvas {
 	width: 100%;
 	height: 100%;
+	border: 1px solid #424242;
 }
 
 .image-properties {
 	height: 30%;
 }
 
+.image-properties .col-md-6 {
+	padding: 0;
+}
+
 .image-properties-header {
 	text-align: center;
 	font-size: 14pt;
+}
+
+.image-property {
+	padding-left: 20px;
+	padding-top: 15px;
+}
+
+.image-property-title {
+	text-transform: uppercase;
+	font-size: 9pt;
+	font-weight: bold;
+}
+
+.image-property-value {
+	padding-left: 10px;
+	font-size: 12pt;
+}
+
+.image-targets-container {
+	margin-top: 5px;
+	margin-right: 5px;
+}
+
+.image-target {
+	padding-top: 10px;
+	clear: both;
+	margin-top: 10px;
+	height: 50px;
+}
+
+.image-target:first-child {
+	margin-top: 0;
+}
+
+.image-target:not(:first-child) {
+	border-top: 1px solid #424242;
+}
+
+.image-target-property {
+	display: inline-block;
+}
+
+.image-target-title {
+	text-transform: uppercase;
+	font-size: 9pt;
+	font-weight: bold;
+}
+
+.image-target-value {
+	font-size: 12pt;
+}
+
+#imagequeue-container {
+	height: 100%;
+}
+
+#imagequeue-container > div {
+	padding: 0;
+	height: 100%;
+}
+
+.imagequeue-header {
+	text-align: center;
+	font-weight: bold;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #989898;
+}
+
+.imagequeue {
+	height: 100%;
+	padding-top: 10px;
+}
+
+#imagequeue-confirmed {
+	border-right: solid 1px #989898;
+}
+
+.queued-image {
+	padding: 10px 0 10px 10px;
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+.queued-image:hover {
+	background: #989898;
+}
+
+.queued-image-title {
+	display: inline-block;
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+.queued-image-value {
+	display: inline-block;
+	font-size: 12pt;
 }
 
 #slider-wrapper {

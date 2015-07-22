@@ -69,7 +69,7 @@
 		</div>
 		<div id="aero-body" class="sidebar-closed">
 			<div id="image-analyst" style="height: 100%">
-				<div class="col-md-7 analyst-body">
+				<div class="col-md-6 analyst-body">
 					<div class="body-header">
 					Current Image
 					</div>
@@ -84,20 +84,136 @@
 								<div class="image-properties-header">
 								Properties
 								</div>
+								<div class="col-md-6">
+									<div class="image-property">
+										<div class="image-property-title">Width:</div>
+										<div class="image-property-value">1920</div>
+									</div>
+									<div class="image-property">
+										<div class="image-property-title">Height:</div>
+										<div class="image-property-value">1080</div>
+									</div>
+									<div class="image-property">
+										<div class="image-property-title">Location:</div>
+										<div class="image-property-value">48.458068, -123.326134</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="image-property">
+										<div class="image-property-title">Plane Pitch:</div>
+										<div class="image-property-value">108 Degrees</div>
+									</div>
+									<div class="image-property">
+										<div class="image-property-title">Plane Roll:</div>
+										<div class="image-property-value">92 Degrees</div>
+									</div>
+									<div class="image-property">
+										<div class="image-property-title">Plane Altitude</div>
+										<div class="image-property-value">150 Ft.</div>
+									</div>
+								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="image-properties-header">
-								Targets
+								2 Targets
+								</div>
+								<div class="image-targets-container">
+									<div class="image-target">
+										<div class="image-target-property col-md-2">
+											<div class="image-target-title">ID:</div>
+											<div class="image-target-value">1</div>
+										</div>
+										<div class="image-target-property col-md-3">
+											<div class="image-target-title">Shape:</div>
+											<div class="image-target-value">Square</div>
+										</div>
+										<div class="image-target-property col-md-3">
+											<div class="image-target-title">Colour:</div>
+											<div class="image-target-value">Blue</div>
+										</div>
+										<div class="image-target-property col-md-4">
+											<div class="image-target-title">Found By:</div>
+											<div class="image-target-value">Computer Vision</div>
+										</div>
+									</div>
+									<div class="image-target">
+										<div class="image-target-property col-md-2">
+											<div class="image-target-title">ID:</div>
+											<div class="image-target-value">2</div>
+										</div>
+										<div class="image-target-property col-md-3">
+											<div class="image-target-title">Shape:</div>
+											<div class="image-target-value">Circle</div>
+										</div>
+										<div class="image-target-property col-md-3">
+											<div class="image-target-title">Colour:</div>
+											<div class="image-target-value">Orange</div>
+										</div>
+										<div class="image-target-property col-md-4">
+											<div class="image-target-title">Found By:</div>
+											<div class="image-target-value">Human</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div id="image-queue-view" class="col-md-3 analyst-body">
+				<div id="image-queue-view" class="col-md-4 analyst-body">
 					<div class="body-header">
 					Image Queue
 					</div>
 					<div id="imagequeue-container">
+						<div class="col-md-6">
+							<div class="imagequeue-header">
+							Confirmed
+							</div>
+							<div class="imagequeue" id="imagequeue-confirmed">
+								<div class="queued-image">
+									<div class="queued-image-title">ID:</div>
+									<div class="queued-image-value">1</div>
+									<div class="queued-image-title">Targets:</div>
+									<div class="queued-image-value">2</div>
+								</div>
+								<div class="queued-image">
+									<div class="queued-image-title">ID:</div>
+									<div class="queued-image-value">2</div>
+									<div class="queued-image-title">Targets:</div>
+									<div class="queued-image-value">1</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="imagequeue-header">
+							New
+							</div>
+							<div class="imagequeue" id="imagequeue-new">
+								<div class="queued-image">
+									<div class="queued-image-title">ID:</div>
+									<div class="queued-image-value">3</div>
+									<div class="queued-image-title">Targets:</div>
+									<div class="queued-image-value">3</div>
+								</div>
+								<div class="queued-image">
+									<div class="queued-image-title">ID:</div>
+									<div class="queued-image-value">4</div>
+									<div class="queued-image-title">Targets:</div>
+									<div class="queued-image-value">0</div>
+								</div>
+								<div class="queued-image">
+									<div class="queued-image-title">ID:</div>
+									<div class="queued-image-value">5</div>
+									<div class="queued-image-title">Targets:</div>
+									<div class="queued-image-value">2</div>
+								</div>
+								<div class="queued-image">
+									<div class="queued-image-title">ID:</div>
+									<div class="queued-image-value">6</div>
+									<div class="queued-image-title">Targets:</div>
+									<div class="queued-image-value">1</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div id="recognition-tuning" class="col-md-2 analyst-body">
