@@ -2,8 +2,10 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
-	'ImageQueueItemView'
-], function($, _, Backbone, QueueItemView){
+	'ImageQueueSubView',
+	'ImageCollection',
+	'ImageModel'
+], function($, _, Backbone, QueueSubView, ImageCollection, ImageModel){
 
 	/**
 	  * @extends Backbone.View
@@ -15,21 +17,15 @@ define([
 
 		initialize: function() {
 
-			// Update when a new model is added to the collection
-			this.listenTo(this.collection, "add", this.add);
+			this.confirmedView = new QueueSubView( { el: "#imagequeue-confirmed", collection: new ImageCollection({ model: ImageModel }) });
+			this.newView = new QueueSubView( { el: "imagequeue-new", collection: new ImageCollection({ model: ImageModel }) });
+
 		},
 
 		render: function() {
 
 			// Return this in order to allow for render chaining
 			return this;
-		},
-
-		add: function(image) {
-
-			var view = new QueueItemView({model: image});
-
-			this.$el.find("#imagequeue-container").prepend(view.render().el);
 		}
 
 	});

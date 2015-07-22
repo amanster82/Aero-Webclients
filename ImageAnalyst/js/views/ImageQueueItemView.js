@@ -10,8 +10,19 @@ define([
 	  */
 	var ImageQueueItemView = Backbone.View.extend({
 
-		// The tag to use
-		tagName: "span",
+		template: _.template("<div class='queued-imag'>" +
+									"<div class='queued-image-properties'>" +
+										"<div class='queued-image-title'>ID:</div>" +
+										"<div class='queued-image-value'>1</div>" +
+									"</div>" +
+									"<div class='queued-image-properties'>" +
+										"<div class='queued-image-title'>Targets:</div>" +
+										"<div class='queued-image-value'>2</div>" +
+									"</div>" +
+									"<% if(typeof(tag) !== 'undefined') { %>" +
+										"<div class='queued-image-tag'><%= tag %></div>" +
+									"<% } %>" +
+								"</div>"),
 
 		initialize: function() {
 
@@ -20,10 +31,8 @@ define([
 		},
 
 		render: function() {
-			var view = "<div class=\"queued-image\">" + this.model.get("guid") + "</div>";
-
 			// Update the UI when there's a change
-			this.$el.html(view);
+			this.$el.html(this.template(this.model.attributes));
 
 			// Return this in order to allow for render chaining
 			return this;

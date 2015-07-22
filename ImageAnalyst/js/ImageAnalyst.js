@@ -6,17 +6,14 @@ define([
 	'Logger',
 	'ImageView',
 	'ImageQueueView',
-	'ImageCollection',
-	'ImageModel',
 	'RecognitionTuning'
-], function($, _, Backbone, Network, Logger, ImageView, ImageQueueView, ImageCollection, ImageModel, RecognitionTuning) {
+], function($, _, Backbone, Network, Logger, ImageView, ImageQueueView, RecognitionTuning) {
 
 	/**
 	  * Singletons for the main view and collection objects
 	  * @private
 	  */	
-	var imageCollection,
-		imageView,
+	var imageView,
 		imageQueueView,
 		tuningView;
 
@@ -27,8 +24,7 @@ define([
 	Initialize = function() {
 		imageView = new ImageView();
 
-		imageCollection = new ImageCollection({ model: ImageModel });
-		imageQueueView = new ImageQueueView({ collection: imageCollection });
+		imageQueueView = new ImageQueueView();
 
 		tuningView = new RecognitionTuning();
 
@@ -42,7 +38,7 @@ define([
 	  * @private
 	  */	
 	var ImageReceived = function(imagedata) {
-		AddImage(imagedata.image);
+		//AddImage(imagedata.image);
 	};
 
 	/**
@@ -50,9 +46,9 @@ define([
 	  * @export
 	  */	
 	var AddImage = function(image) {
-		imageCollection.add({ width: image.width, height: image.height, latitude: image.latitude, longitude: image.longitude,
-								pitchAngle: image.pitchangle, guid: image.guid, rollAngle: image.rollangle, atltitude: image.atltitude,
-								timestamp: image.timestamp, data: image.data});
+		//imageCollection.add({ width: image.width, height: image.height, latitude: image.latitude, longitude: image.longitude,
+		//						pitchAngle: image.pitchangle, guid: image.guid, rollAngle: image.rollangle, atltitude: image.atltitude,
+		//						timestamp: image.timestamp, data: image.data});
 	};
 
 	/**
