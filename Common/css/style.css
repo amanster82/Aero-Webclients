@@ -112,6 +112,20 @@ header {
 	background: #424242;
 }
 
+.input-form-error .form-control {
+	border-color: #A94442;
+}
+
+.input-form-error .input-group-addon {
+    color: #A94442;
+    background-color: #F2DEDE;
+    border-color: #A94442;
+}
+
+.form-control:focus {
+	box-shadow: none !important;
+}
+
 #copyright p {
 	padding-top: 15px;
 	text-align: center;

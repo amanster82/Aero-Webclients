@@ -5,16 +5,18 @@ define([
 	'bootstrapjs',
 	'Network',
 	'Logger',
+	'SidebarView',
 	'ImageView',
 	'ImageQueueView',
 	'RecognitionTuning'
-], function($, _, Backbone, bootstrap, Network, Logger, ImageView, ImageQueueView, RecognitionTuning) {
+], function($, _, Backbone, bootstrap, Network, Logger, SidebarView, ImageView, ImageQueueView, RecognitionTuning) {
 
 	/**
 	  * Singletons for the main view and collection objects
 	  * @private
 	  */	
-	var imageView,
+	var sidebarView,
+		imageView,
 		imageQueueView,
 		tuningView;
 
@@ -23,6 +25,8 @@ define([
 	  * @export
 	  */	
 	Initialize = function() {
+		sidebarView = new SidebarView();
+
 		imageView = new ImageView();
 
 		imageQueueView = new ImageQueueView();
@@ -32,12 +36,6 @@ define([
 		Network.Recv(this, "image", ImageReceived);
 
 		Logger.Log({ severity: 'success', message: "Image Analyst started" });
-
-		 $('#send-test-image').popover({
-		 	trigger: 'manual',
-		 	html: true,
-		 	content: '<div class="input-group input-group-sm"><span class="input-group-addon" id="basic-addon1">URL</span><input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1"><span class="input-group-btn"><button class="btn btn-default" type="button">SEND</button></span></div>'
-		 });
 	};
 
 	/**

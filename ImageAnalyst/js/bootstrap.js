@@ -20,6 +20,7 @@ require.config({
 		ConnectionModel: '../../Common/js/models/ConnectionModel',
 		ConnectionView: '../../Common/js/views/ConnectionView',
 		CommonDesign: '../../Common/js/CommonDesign',
+		SidebarView: 'views/SidebarView',
 		LoggerCollection: '../../Common/js/collections/LoggerCollection',
 		LogMessageView: '../../Common/js/views/LogMessageView',
 		LoggerView: '../../Common/js/views/LoggerView',

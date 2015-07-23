@@ -30,17 +30,6 @@ $('.sidebar-wrapper').click(function(event) {
 	$('#aero-body').toggleClass('sidebar-closed');
 });
 
-$('.sidebar-item button').click(function(event) {
-	event.stopPropagation();
-	if($(this).data("toggle") === "popover") {
-		$(this).popover('toggle');
-	}
-});
-
-$('.sidebar-item .popover').click(function(event) {
-	event.stopPropagation();
-});
-
 // Because the page is static and doesn't scroll, this function is very simple for now
 function ResizeSidebar() {
 	var scrollTop = window.pageYOffset;
