@@ -102,9 +102,10 @@ header {
 	width: 200px;
 }
 
-.sidebar .popover {
+.sidebar-item .popover {
 	margin-left: 15px;
 	color: #424242;
+	max-width: inherit;
 }
 
 .sidebar-item:hover {

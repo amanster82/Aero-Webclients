@@ -36,7 +36,7 @@ define([
 		 $('#send-test-image').popover({
 		 	trigger: 'manual',
 		 	html: true,
-		 	content: '<div class="input-group"><span class="input-group-addon" id="basic-addon1">URL</span><input type="text" class="form-control" placeholder="URL" aria-describedby="basic-addon1"><span class="input-group-btn"><button class="btn btn-default" type="button">Go!</button></span></div>'
+		 	content: '<div class="input-group input-group-sm"><span class="input-group-addon" id="basic-addon1">URL</span><input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1"><span class="input-group-btn"><button class="btn btn-default" type="button">SEND</button></span></div>'
 		 });
 	};
 
