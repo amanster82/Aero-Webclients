@@ -74,13 +74,6 @@ define([
 			pkt.serialize(ClientTypeEnum[ClientType]);
 
 			Send(pkt);
-
-			// Debug the JSON transmission
-			var json = "{ \"packet\": { \"id\": 1 } }";
-			var jspkt = PacketFactory.Create("PacketJSONPayload");
-			jspkt.serialize(json);
-
-			Send(jspkt);
 		},
 		
 		onmessage: function(msg) {
@@ -214,7 +207,7 @@ define([
 		}
 		else
 		{
-			Logger.Log({ severity: "warning", message: "Failed to send packet" });
+			Logger.Log({ severity: "warning", message: "Failed to send packet: Invalid data or packet" });
 		}
 	};
 

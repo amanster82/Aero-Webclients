@@ -34,6 +34,7 @@ define([
 		tuningView = new RecognitionTuning();
 
 		Network.Recv(this, "image", ImageReceived);
+		Network.Recv(this, "targets", TargetsReceived);
 
 		Logger.Log({ severity: 'success', message: "Image Analyst started" });
 	};
@@ -43,25 +44,33 @@ define([
 	  * @private
 	  */	
 	var ImageReceived = function(imagedata) {
-		//AddImage(imagedata.image);
+		console.log(imagedata);
+
+		var canvas = document.getElementById('image-canvas');
+		var context = canvas.getContext('2d');
+		var img = new Image();
+
+		img.onload = function() {
+		  context.drawImage(this, 0, 0, canvas.width, canvas.height);
+		}
+
+		img.src = "data:image/jpg;base64," + imagedata.image.data;
 	};
 
 	/**
-	  * Add an image to the image collection given an object containing image data
-	  * @export
+	  * Callback to receive target data
+	  * @private
 	  */	
-	var AddImage = function(image) {
-		//imageCollection.add({ width: image.width, height: image.height, latitude: image.latitude, longitude: image.longitude,
-		//						pitchAngle: image.pitchangle, guid: image.guid, rollAngle: image.rollangle, atltitude: image.atltitude,
-		//						timestamp: image.timestamp, data: image.data});
+	var TargetsReceived = function(targets) {
+		console.log(targets);
 	};
+
 
 	/**
 	  * API Mapping
 	  * @return
 	  */
 	return {
-		Initialize: Initialize,
-		AddImage: AddImage
+		Initialize: Initialize
 	};
 });

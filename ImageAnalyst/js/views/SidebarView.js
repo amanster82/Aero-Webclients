@@ -52,7 +52,6 @@ define([
 
 				// Now we need to send the image to the DC
 				var json = "{ \"image\": { \"url\": \"" + uri + "\" } }";
-				console.log(json);
 				var jspkt = PacketFactory.Create("PacketJSONPayload");
 				jspkt.serialize(json);
 

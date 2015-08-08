@@ -67,8 +67,8 @@ define([
 
 		if(typeof Packet.image === "object")
 			PacketEventListener.trigger("image", Packet);
-		else if(typeof Packet.target ==="object")
-			PacketEventListener.trigger("target", Packet);
+		else if(typeof Packet.targets ==="object")
+			PacketEventListener.trigger("targets", Packet);
 		else if(typeof Packet.config ==="object")
 			PacketEventListener.trigger("config", Packet);
 	}
@@ -147,8 +147,6 @@ define([
 		"PacketJSONPayload" : PacketJSONPayload,
 		"PacketClientType" : PacketClientType
 	};
-
-
 
 	/**
 	  * API Mapping
