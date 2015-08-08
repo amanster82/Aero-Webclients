@@ -5,11 +5,12 @@ define([
 	'bootstrapjs',
 	'Network',
 	'Logger',
+	'ImageModel',
 	'SidebarView',
 	'ImageView',
 	'ImageQueueView',
 	'RecognitionTuning'
-], function($, _, Backbone, bootstrap, Network, Logger, SidebarView, ImageView, ImageQueueView, RecognitionTuning) {
+], function($, _, Backbone, bootstrap, Network, Logger, ImageModel, SidebarView, ImageView, ImageQueueView, RecognitionTuning) {
 
 	/**
 	  * Singletons for the main view and collection objects
@@ -27,7 +28,7 @@ define([
 	Initialize = function() {
 		sidebarView = new SidebarView();
 
-		imageView = new ImageView();
+		imageView = new ImageView({model: new ImageModel()});
 
 		imageQueueView = new ImageQueueView();
 
@@ -44,7 +45,7 @@ define([
 	  * @private
 	  */	
 	var ImageReceived = function(imagedata) {
-		console.log(imagedata);
+		imageView.model.set(new ImageModel({ guid: imagedata.image.guid }).toJSON());
 
 		var canvas = document.getElementById('image-canvas');
 		var context = canvas.getContext('2d');
