@@ -45,17 +45,7 @@ define([
 	  * @private
 	  */	
 	var ImageReceived = function(imagedata) {
-		imageView.model.set(new ImageModel({ guid: imagedata.image.guid }).toJSON());
-
-		var canvas = document.getElementById('image-canvas');
-		var context = canvas.getContext('2d');
-		var img = new Image();
-
-		img.onload = function() {
-		  context.drawImage(this, 0, 0, canvas.width, canvas.height);
-		}
-
-		img.src = "data:image/jpg;base64," + imagedata.image.data;
+		imageView.model.set(new ImageModel(imagedata.image).toJSON());
 	};
 
 	/**

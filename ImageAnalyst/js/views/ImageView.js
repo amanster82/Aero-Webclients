@@ -89,6 +89,19 @@ define([
 		renderImageProperties: function() {
 			this.$el.find("#image-properties-container").html(this.imageTemplate(this.model.attributes));
 
+			if(this.model.attributes.data !== undefined)
+			{
+				var canvas = document.getElementById('image-canvas');
+				var context = canvas.getContext('2d');
+				var img = new Image();
+
+				img.onload = function() {
+				 	context.drawImage(this, 0, 0, canvas.width, canvas.height);
+				}
+
+				img.src = "data:image/jpg;base64," + this.model.attributes.data;			
+			}
+
 			return this;
 		}
 	});
