@@ -5,10 +5,10 @@ require([
 ], function ($) {
 	// For footer:
 	$('#log-footer').click(function(event) {
-
 		// Stops the footer from receiving clicks if a button is clicked
-		if($(event.target).is(".filter-button") || $(event.target).is("label"))
+		if ($(event.target).is(".filter-button, label")) {
 			return;
+		}
 
 		$(this).toggleClass('footer-closed');
 
@@ -23,10 +23,10 @@ require([
 
 	// For sidebar:
 	$('.sidebar-wrapper').click(function(event) {
-
 		// Stops the sidebar from receiving specific events
-		if(!$(event.target).is(".sidebar-wrapper"))
+		if (this !== event.target) {
 			return;
+		}
 
 		$(this).toggleClass('sidebar-closed');
 		$('#log-footer').toggleClass('sidebar-closed');
@@ -41,8 +41,6 @@ require([
 
 		var visibleHeaderHeight = Math.max(0, headerHeight - scrollTop);
 		$('.sidebar-wrapper').height(viewportHeight - visibleHeaderHeight);
-
-		return;
 	}
 
 	// For body:
@@ -53,8 +51,6 @@ require([
 
 		var visibleBodyHeight = Math.max(0, bodyHeight - scrollTop);
 		$('#aero-body').height(viewportHeight - visibleBodyHeight);
-
-		return;
 	}
 
 	var pendingReflow = null;
