@@ -23,9 +23,9 @@ define([
 
 		initialize: function() {
 			$('#send-test-image').popover({
-		 		trigger: 'manual',
-		 		html: true,
-		 		content: '<div class="input-group input-group-sm"><span class="input-group-addon" id="basic-addon1">http://</span><input type="url" class="form-control" id="action-test-image-url" placeholder="" aria-describedby="basic-addon1"><span class="input-group-btn"><button class="btn btn-default" type="button" id="action-send-test-image">SEND</button></span></div>'
+				trigger: 'manual',
+				html: true,
+				content: '<div class="input-group input-group-sm"><span class="input-group-addon" id="basic-addon1">http://</span><input type="url" class="form-control" id="action-test-image-url" placeholder="" aria-describedby="basic-addon1"><span class="input-group-btn"><button class="btn btn-default" type="button" id="action-send-test-image">SEND</button></span></div>'
 			});
 		},
 
@@ -37,8 +37,9 @@ define([
 		sendTestImage: function(ev) {
 			var uri = $("#action-test-image-url").val().toString();
 
-			if(uri.lastIndexOf("http://", 0) === -1 && uri.lastIndexOf("https://", 0) === -1)
+			if(uri.lastIndexOf("http://", 0) === -1 && uri.lastIndexOf("https://", 0) === -1) {
 				uri = "http://".concat(uri);
+			}
 
 			if(uri.match(urlPattern) === null)
 			{

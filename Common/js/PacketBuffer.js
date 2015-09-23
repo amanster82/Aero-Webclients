@@ -26,10 +26,10 @@ define([
 				packetLength,
 				buffer,
 				data;
-		
+
 			/**
 			  * Initialize basic data for this packet buffer
-			  */		
+			  */
 			if(typeof Data === 'number')
 			{
 				packetLength = Data; // Data is a packet length here
@@ -55,7 +55,7 @@ define([
 
 			this.setCursor = function(newCursor) {
 				cursor = newCursor || 0;
-			}
+			};
 
 			this.isWritable = function() {
 				return writable;
@@ -72,7 +72,7 @@ define([
 			this.getPacketLength = function() {
 				return packetLength;
 			};
-		};
+		}
 
 		/**
 		 * Enum to map string types to sizes
@@ -93,49 +93,56 @@ define([
 		  * @export
 		  */
 		PacketBuffer.prototype.write = function(variable, type) {
-			if(this.isWritable() == false)
+			if(!this.isWritable()) {
 				return false;
-			
+			}
+
 			if(typeof variable === 'number')
 			{
 				// Check for data overflow
-				if((this.getCursor() + type.size) > this.getPacketLength())
+				if((this.getCursor() + type.size) > this.getPacketLength()) {
 					return false;
+				}
 
 				switch(type.size)
 				{
 					case 1:
-						if(type.name === "uchar")
+						if(type.name === "uchar") {
 							this.getData().setUint8(this.getCursor(), variable, true);
-						else
+						} else {
 							this.getData().setInt8(this.getCursor(), variable, true);
+						}
 						break;
-					
+
 					case 2:
-						if(type.name === "ushort")
+						if(type.name === "ushort") {
 							this.getData().setUint16(this.getCursor(), variable, true);
-						else
+						} else {
 							this.getData().setInt16(this.getCursor(), variable, true);
+						}
 						break;
-					
+
 					case 4:
-						if(type.name === "uint")
+						if(type.name === "uint") {
 							this.getData().setUint32(this.getCursor(), variable, true);
-						else
+						} else {
 							this.getData().setInt32(this.getCursor(), variable, true);
+						}
 						break;
 				}
-				
+
 				this.setCursor( this.getCursor() + type.size);
 			}
 			else if(typeof variable === 'string')
 			{
 				// Check for data overflow
-				if((this.getCursor() + variable.length) > this.getPacketLength())
+				if((this.getCursor() + variable.length) > this.getPacketLength()) {
 					return false;
+				}
 
-				for(var i = 0; i < variable.length; i++)
+				for(var i = 0; i < variable.length; i++) {
 					this.getData().setUint8(this.getCursor()+i, variable.charCodeAt(i), true);
+				}
 				this.setCursor( this.getCursor() + variable.length);
 			}
 		};
@@ -145,50 +152,46 @@ define([
 		  * @export
 		  */
 		PacketBuffer.prototype.peek = function(offset, type, amount) {
+			var i;
+			var ret;
+
 			switch(type.name)
 			{
 				case "char":
-					if(typeof amount === 'undefined')
+					if(typeof amount === 'undefined') {
 						return this.getData().getInt8(offset, true);
-					else
-					{
-						// For now we'll assume that if a number of characters are requested, that
-						// we should also encode it as a string object using 'fromCharCode()'
-						var ret = "";
-						for(var i = 0; i < amount; i++)
-							ret += String.fromCharCode(this.getData().getUint8(offset+i, true));
-						return ret;
 					}
-					break;
+
+					// For now we'll assume that if a number of characters are requested, that
+					// we should also encode it as a string object using 'fromCharCode()'
+					ret = "";
+					for(i = 0; i < amount; i++) {
+						ret += String.fromCharCode(this.getData().getUint8(offset+i, true));
+					}
+					return ret;
 				case "uchar":
-					if(typeof amount === 'undefined')
+					if(typeof amount === 'undefined') {
 						return this.getData().getUint8(offset, true);
-					else
-					{
-						var ret = "";
-						for(var i = 0; i < amount; i++)
-							ret += String.fromCharCode(this.getData().getUint8(offset+i, true));
-						return ret;
 					}
-					break;
+
+					ret = "";
+					for(i = 0; i < amount; i++) {
+						ret += String.fromCharCode(this.getData().getUint8(offset+i, true));
+					}
+					return ret;
 				case "ushort":
 					return this.getData().getUint16(offset, true);
-					break;
 				case "short":
 					return this.getData().getInt16(offset, true);
-					break;
 				case "int":
 					return this.getData().getInt32(offset, true);
-					break;
 				case "uint":
 					return this.getData().getUint32(offset, true);
-					break;
 				case "float":
 					return this.getData().getInt32(offset, true);
-					break;
 			}
 		};
-		
+
 		/**
 		  * Returns the constructor
 		  */
@@ -202,7 +205,7 @@ define([
 	  */
 	var Create = function (data) {
 		return new PacketBuffer(data);
-	}
+	};
 
 	/**
 	  * Public API Mapping to this object

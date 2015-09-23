@@ -10,9 +10,7 @@
 	"nocomma": true,
 	"nonbsp": true,
 	"nonew": true,
-	"singleGroups": true,
 	"undef": true,
-	"unused": true,
 	"globals": {
 		"define": false,
 		"require": false

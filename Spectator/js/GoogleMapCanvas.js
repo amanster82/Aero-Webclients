@@ -7,18 +7,18 @@ define([
 
 	var mapCanvas = document.getElementById('map-canvas');
 	var mapOptions = {
-		  center: new google.maps.LatLng(48.4610741,-123.3104351),
-		  zoom: 8,
-		  mapTypeId: google.maps.MapTypeId.ROADMAP
+		center: new google.maps.LatLng(48.4610741,-123.3104351),
+		zoom: 8,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
-	
+
 	var map;
 
 	var Initialize = function() {
 		map = new google.maps.Map(mapCanvas, mapOptions);
-	}
+	};
 
 	return {
 		Initialize: Initialize
-	}
+	};
 });
