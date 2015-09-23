@@ -187,7 +187,7 @@ define([
 	};
 
 	var DestroySocket = function() {
-		delete ServerSocket;
+		ServerSocket.close();
 		Connection.set( { connected: false });
 		Logger.Log({ severity: 'warning', message: "Disconnected from server" });
 	};
