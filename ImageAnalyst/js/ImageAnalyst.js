@@ -15,7 +15,7 @@ define([
 	/**
 	  * Singletons for the main view and collection objects
 	  * @private
-	  */	
+	  */
 	var sidebarView,
 		imageView,
 		imageQueueView,
@@ -24,8 +24,8 @@ define([
 	/**
 	  * Inititializes the Network
 	  * @export
-	  */	
-	Initialize = function() {
+	  */
+	var Initialize = function() {
 		sidebarView = new SidebarView();
 
 		imageView = new ImageView({model: new ImageModel()});
@@ -43,7 +43,7 @@ define([
 	/**
 	  * Callback to receive image data
 	  * @private
-	  */	
+	  */
 	var ImageReceived = function(imagedata) {
 		imageView.model.set(new ImageModel(imagedata.image).toJSON());
 	};
@@ -51,7 +51,7 @@ define([
 	/**
 	  * Callback to receive target data
 	  * @private
-	  */	
+	  */
 	var TargetsReceived = function(targets) {
 		console.log(targets);
 	};
