@@ -16,7 +16,7 @@ define([
 			});
 		},
 
-		defaults: function() {
+		defaults: {
 			connected: ''
 		}
 	});
