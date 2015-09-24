@@ -96,10 +96,10 @@ define([
 				var img = new Image();
 
 				img.onload = function() {
-				 	context.drawImage(this, 0, 0, canvas.width, canvas.height);
-				}
+					context.drawImage(this, 0, 0, canvas.width, canvas.height);
+				};
 
-				img.src = "data:image/jpg;base64," + this.model.attributes.data;			
+				img.src = "data:image/jpg;base64," + this.model.attributes.data;
 			}
 
 			return this;

@@ -11,12 +11,12 @@ define([
 	var ConnectionModel = Backbone.Model.extend({
 
 		initialize: function() {
-            this.on("change:connected", function(model) {
-                var connected = model.get("connected");
-            });
+			this.on("change:connected", function(model) {
+				var connected = model.get("connected");
+			});
 		},
 
-		defaults: function() {
+		defaults: {
 			connected: ''
 		}
 	});

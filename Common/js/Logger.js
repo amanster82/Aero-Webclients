@@ -10,14 +10,14 @@ define([
 	/**
 	  * Singletons for the main view and collection objects
 	  * @private
-	  */	
+	  */
 	var logCollection,
 		logView;
 
 	/**
 	  * Inititializes the logger
 	  * @export
-	  */	
+	  */
 	var Initialize = function() {
 		logCollection = new LoggerCollection({ model: LogMessageModel });
 		logView = new LoggerView({ collection: logCollection });
@@ -27,7 +27,7 @@ define([
 	  * Writes a log message with the given properties.
 	  * Defaults if properties other than message are omitted
 	  * @export
-	  */	
+	  */
 	var Log = function(properties) {
 		if(typeof properties !== "object")
 		{
@@ -37,8 +37,9 @@ define([
 
 		var msg = properties.message;
 
-		if(properties.message === undefined)
+		if(properties.message === undefined) {
 			return;
+		}
 
 		var severity = properties.severity;
 		var timestamp = properties.timestamp;
@@ -49,10 +50,11 @@ define([
 	/**
 	  * Simpler version of the Log function where only a message needs to be given
 	  * @export
-	  */	
+	  */
 	var LogMessage = function(msg) {
-		if(msg === undefined)
+		if(msg === undefined) {
 			return;
+		}
 
 		logCollection.add({ message: msg });
 	};
