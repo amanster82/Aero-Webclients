@@ -137,12 +137,13 @@ header {
 }
 
 #aero-body {
-	padding-left: 180px;
+	padding-left: 20px;
+	padding-right: 20px;
 	width: 100%;
 }
 
 #aero-body.sidebar-closed {
-	padding-left: 70px;
+	padding-left: 20px;
 }
 
 

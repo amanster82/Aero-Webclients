@@ -7,6 +7,11 @@ div.sidebar-wrapper ul li{
 	margin: 15px 0 0 -25px;
 }
 
+#send-btn-wrapper {
+	position: relative;
+	text-align: center;
+}
+
 #imageAnalystt{
 	-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
     -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
