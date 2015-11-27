@@ -7,9 +7,19 @@ div.sidebar-wrapper ul li{
 	margin: 15px 0 0 -25px;
 }
 
+#send-box {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
 #send-btn-wrapper {
 	position: relative;
 	text-align: center;
+}
+
+#send-btn {
+	width: 90%;
+	background-color: green;
 }
 
 #imageAnalystt{
@@ -18,6 +28,10 @@ div.sidebar-wrapper ul li{
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
         background-color:#428BCA;
         border-color:#3071A9;
+}
+
+#log-area {
+	height: 97%;
 }
 
 #log-footer1 {

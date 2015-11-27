@@ -138,6 +138,7 @@ header {
 }
 
 #aero-body {
+	padding-top: 5px;
 	padding-left: 23px;
 	padding-right: 22%;
 	width: 100%;
