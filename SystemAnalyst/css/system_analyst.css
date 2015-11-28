@@ -2,14 +2,32 @@
 	margin-left:0;
 }
 
+/* Sidebar */
 div.sidebar-wrapper ul li{
 	overflow: hidden;
 	margin: 15px 0 0 -25px;
 }
 
+#ac-info {
+	padding-top: 5px;
+}
+
+#attitude-indicator {
+	border: 1px solid #FFFFFF
+}
+
+#ac-data {
+	padding-top: 12px;
+}
+
+/* Send Area */
 #send-box {
 	padding-top: 5px;
 	padding-bottom: 5px;
+}
+
+#send-text {
+	text-align: center;
 }
 
 #send-btn-wrapper {
@@ -32,6 +50,7 @@ div.sidebar-wrapper ul li{
 
 #log-area {
 	height: 97%;
+	border: 1px solid rgba(0, 0, 0, 0.20)
 }
 
 #log-footer1 {
