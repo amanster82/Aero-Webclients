@@ -50,11 +50,10 @@
 				<!--LOG SEVERITY FILTERS-->
 				<div id="severity-toggle" class="row">
 					<ul>
-						<li> <label><input type="checkbox" id="critical-toggle">CRITICAL</label>
-						<li> <label><input type="checkbox" id="fail-toggle">FAIL</label>
-						<li> <label><input type="checkbox" id="warn-toggle">WARN</label>
-						<li> <label><input type="checkbox" id="success-toggle">SUCCESS</label>
-						<li> <label><input type="checkbox" id="debug-toggle">DEBUG</label>
+						<li> <label><input type="checkbox" id="filter-critical">CRITICAL</label>
+						<li> <label><input type="checkbox" id="filter-warning">WARN</label>
+						<li> <label><input type="checkbox" id="filter-success">SUCCESS</label>
+						<li> <label><input type="checkbox" id="filter-debug">DEBUG</label>
 					</ul>
 				</div>
 			</div>
@@ -82,8 +81,8 @@
 			</div>
 		</div>
 		<div id='aero-body'>
-			<div class="row" id="log-area">
-				Log area.
+			<div class="row" id="logger-view">
+				<!--LOG MESSAGE AREA-->
 			</div>
 			<div class="row" id="send-box">
 				<div class="col-md-10" id="send-text">
