@@ -1,7 +1,3 @@
-.aero-body {
-	margin-left:0;
-}
-
 /* Sidebar */
 div.sidebar-wrapper ul li{
 	overflow: hidden;
@@ -30,89 +26,6 @@ div.sidebar-wrapper ul li{
 	font-size: 11px;
 	text-align: center;
 }
-
-/* Send Area */
-#send-box {
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
-#send-text {
-	text-align: center;
-}
-
-#send-btn-wrapper {
-	position: relative;
-	text-align: center;
-}
-
-#send-btn {
-	width: 90%;
-	background-color: green;
-}
-
-#imageAnalystt{
-	-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
-    -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
-        background-color:#428BCA;
-        border-color:#3071A9;
-}
-
-#logger-view {
-	height: 97%;
-	border: 1px solid rgba(0, 0, 0, 0.20)
-}
-
-#log-footer1 {
-	position: fixed;
-    right: 0px;
-	bottom: 45px;
-	color: #fff;
-	text-align: center;
-	background-color: #333;
-	border: 1px solid #000;
-	border-left: 0;
-	z-index: 999;
-    font-family: arial;
-    padding: 10px 0;
-	width: 100%;
-	max-height: 450px;
-	margin-left: 180px;
-}
-
-#footer-navbar {
-	position: relative;
-	height: 35px;
-	width: 100%;
-	margin: 0 0 0 0;
-	border-left: 0;
-}
-
-.sidebar-right{
-float: right;
-width: 20%;
-position: absolute;
-top: 60px;
-right: -63px;
-height: 100%;
-margin-right: 0px;
-
-}
-
-.logbar{
-	width: 80%;
-	background: wheat;
-	height: 100%;
-	margin: 0 0 0 25px;
-}
-
-#filter-wrapper{
-    overflow:scroll;
-    border-right: 1px solid black;
-    height:85%;
-}
-
 
 div.sidebar-right ul {
   text-align: left;
@@ -143,13 +56,11 @@ div.sidebar-right ul li:hover {
   color: #fff;
 }
 
-
 div.sidebar-right ul li ul {
   padding: 0;
   position: absolute;
   top: 48px;
   left: 0;
-  /*width: 150px;*/
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -177,7 +88,75 @@ div.sidebar-right ul li:hover ul {
   visibility: visible;
 }
 
+.sidebar-right{
+	float: right;
+	width: 20%;
+	position: absolute;
+	top: 60px;
+	right: -63px;
+	height: 100%;
+	margin-right: 0px;
+}
 
+/* Send Area */
+#send-box {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#send-text {
+	text-align: center;
+}
+
+#send-btn-wrapper {
+	position: relative;
+	text-align: center;
+}
+
+#send-btn {
+	width: 90%;
+	background-color: green;
+}
+
+/*Log Area*/
+#logger-view {
+	height: 97%;
+	border: 1px solid rgba(0, 0, 0, 0.20)
+}
+
+#log-footer1 {
+	position: fixed;
+    right: 0px;
+	bottom: 45px;
+	color: #fff;
+	text-align: center;
+	background-color: #333;
+	border: 1px solid #000;
+	border-left: 0;
+	z-index: 999;
+    font-family: arial;
+    padding: 10px 0;
+	width: 100%;
+	max-height: 450px;
+	margin-left: 180px;
+}
+
+#footer-navbar {
+	position: relative;
+	height: 35px;
+	width: 100%;
+	margin: 0 0 0 0;
+	border-left: 0;
+}
+
+.logbar{
+	width: 80%;
+	background: wheat;
+	height: 100%;
+	margin: 0 0 0 25px;
+}
+
+/*Inputs*/
 input[type=checkbox] {
     display:none;
 }
@@ -218,7 +197,7 @@ input[id='image'] + label {
     padding: 4px 7px;
 }
  
- input[id='spectator'] + label {
+input[id='spectator'] + label {
 	padding: 5px 7px;
 }
  
@@ -260,4 +239,18 @@ input[id='spectator']:checked + label {
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
 	background-color: rgba(55, 185, 30, 1);
 	border-color: rgba(0, 99, 19, 1);
+}
+
+#imageAnalyst{ /*Do we need this?*/
+	-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+        background-color:#428BCA;
+        border-color:#3071A9;
+}
+
+#filter-wrapper{
+    overflow:scroll;
+    border-right: 1px solid black;
+    height:85%;
 }
