@@ -7,7 +7,7 @@ define([
 	'CommonDesign',
 	'Logger',
 	'GoogleMapCanvas'
-], function($, _, Backbone, Bootstrap, Network, CommonDesign, Logger){
+], function($, _, Backbone, Bootstrap, Network, CommonDesign, Logger, Map){
 
 	var Initialize = function () {
 
