@@ -23,7 +23,7 @@ require.config({
 		LogMessageModel: '../../Common/js/models/LogMessageModel',
 		Util: '../../Common/js/Util',
 		Logger: '../../Common/js/Logger',
-		GoogleMapCanvas: 'GoogleMapCanvas'
+		GoogleMapCanvas: '../../Common/js/GoogleMapCanvas'
 	}
 });
 

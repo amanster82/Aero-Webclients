@@ -5,7 +5,8 @@ define([
 	'bootstrapjs',
 	'Network',
 	'CommonDesign',
-	'Logger'
+	'Logger',
+	'GoogleMapCanvas'
 ], function($, _, Backbone, Bootstrap, Network, CommonDesign, Logger){
 
 	var Initialize = function () {
@@ -15,6 +16,8 @@ define([
 
 		Network.Initialize();
 		Network.ConnectToServer("SystemAnalyst");
+		
+		Map.Initialize();
 
 		console.log("All systems go");
 	};

@@ -17,9 +17,11 @@ div.sidebar-wrapper ul li{
 	vertical-align: middle;
 }
 
-#ac-map {
+#map-canvas {
 	padding-top: 10px;
 	text-align: center;
+	max-height: 100px;
+	max-width: 250px;
 }
 
 #ac-loc {

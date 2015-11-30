@@ -22,7 +22,8 @@ require.config({
 		LoggerView: '../../Common/js/views/LoggerView',
 		LogMessageModel: '../../Common/js/models/LogMessageModel',
 		Util: '../../Common/js/Util',
-		Logger: '../../Common/js/Logger'
+		Logger: '../../Common/js/Logger',
+		GoogleMapCanvas: '../../Common/js/GoogleMapCanvas'
 	}
 });
 

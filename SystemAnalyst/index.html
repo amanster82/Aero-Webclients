@@ -50,10 +50,10 @@
 				<!--LOG SEVERITY FILTERS-->
 				<div id="severity-toggle" class="row">
 					<ul>
-						<li> <label><input type="checkbox" id="filter-critical">CRITICAL</label>
-						<li> <label><input type="checkbox" id="filter-warning">WARN</label>
-						<li> <label><input type="checkbox" id="filter-success">SUCCESS</label>
-						<li> <label><input type="checkbox" id="filter-debug">DEBUG</label>
+						<li> <label><input class="filter-button filter-critical" type="checkbox" id="filter-critical">CRITICAL</label>
+						<li> <label><input class="filter-button filter-warning" type="checkbox" id="filter-warning">WARN</label>
+						<li> <label><input class="filter-button filter-success" type="checkbox" id="filter-success">SUCCESS</label>
+						<li> <label><input class="filter-button filter-debug" type="checkbox" id="filter-debug">DEBUG</label>
 					</ul>
 				</div>
 			</div>
@@ -66,9 +66,7 @@
 					<p id="altitude"> Altitude: 0 </p>
 					<p id="heading"> Heading: 0 </p>
 				</div>
-				<div id="ac-map" class="row">
-					<!--Mini-map goes here-->
-					<img src="#" width="250" height="150">
+				<div id="map-canvas" class="row">
 				</div>
 				<div id="ac-loc" class="row">
 					<div id="ac-lat" class="col-md-6">
