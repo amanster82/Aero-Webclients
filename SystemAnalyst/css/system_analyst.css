@@ -21,6 +21,16 @@ div.sidebar-wrapper ul li{
 	vertical-align: middle;
 }
 
+#ac-map {
+	padding-top: 10px;
+	text-align: center;
+}
+
+#ac-loc {
+	font-size: 11px;
+	text-align: center;
+}
+
 /* Send Area */
 #send-box {
 	padding-top: 5px;
