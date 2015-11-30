@@ -46,6 +46,18 @@
 			</div>
 		</header>
 		<div id="sidebar" class="sidebar-wrapper">
+			<div id="msg-toggle" class="sidebar-group">
+				<!--LOG SEVERITY FILTERS-->
+				<div id="severity-toggle" class="row">
+					<ul>
+						<li> <label><input type="checkbox" id="critical-toggle">CRITICAL</label>
+						<li> <label><input type="checkbox" id="fail-toggle">FAIL</label>
+						<li> <label><input type="checkbox" id="warn-toggle">WARN</label>
+						<li> <label><input type="checkbox" id="success-toggle">SUCCESS</label>
+						<li> <label><input type="checkbox" id="debug-toggle">DEBUG</label>
+					</ul>
+				</div>
+			</div>
 			<div id="ac-info" class="sidebar-group">
 				<div class="col-md-5" id="attitude-wrapper">
 					<canvas id="attitude-indicator" width="100" height="100">
