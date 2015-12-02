@@ -21,7 +21,17 @@ define([
 
 		el: "#sa-monitor",
 		
+		initialize: function() {
+			//listen for new messages in the collection
+			this.listenTo(this.collection, "add", add);
+		},
 		
+		add: function(newMessage) {
+			//check that the message is displayed and exists
+			if (newMessage.get("display") === true && newMessage.get("message") !== undefined) {
+				//add message view here
+			}
+		}
 	});
 
 	/**
