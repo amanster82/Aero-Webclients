@@ -13,11 +13,14 @@ define([
 		ShowSuccess = true;
 
 	/**
-	  * The LoggerView will monitor for any changes in the LoggerCollection
-	  * and append new LogMessage objects to the view
+	  * System Analyst Monitor view - gets messages sent over our
+	  * network and displays them in the SA client.
 	  * @extends Backbone.View
 	  */
 	var SAMonitorView = Backbone.View.extend({
+
+		el: "#sa-monitor",
+		
 		
 	});
 
