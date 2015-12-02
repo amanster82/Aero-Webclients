@@ -106,6 +106,7 @@ div.sidebar-right ul li:hover ul {
 #send-box {
 	padding-top: 5px;
 	padding-bottom: 5px;
+	bottom: 100%;
 }
 
 #send-text {
@@ -124,7 +125,7 @@ div.sidebar-right ul li:hover ul {
 
 /*Log Area*/
 #logger-view {
-	height: 97%;
+	min-height: 93%;
 	border: 1px solid rgba(0, 0, 0, 0.20)
 }
 
