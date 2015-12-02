@@ -249,9 +249,8 @@ input[id='success']:checked + label {
 	z-index: 999;
     font-family: arial;
     padding: 10px 0;
-	width: 100%;
+	width: 80%;
 	max-height: 450px;
-	margin-left: 180px;
 }
 
 ::-webkit-scrollbar {
@@ -274,7 +273,7 @@ input[id='success']:checked + label {
 }
 
 #log-footer.sidebar-closed {
-	margin-left: 70px;
+	width: 90%;
 }
 
 .footer-closed #logger-view > span:not(:first-child){
