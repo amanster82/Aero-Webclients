@@ -6,8 +6,9 @@ define([
 	'Network',
 	'CommonDesign',
 	'Logger',
-	'GoogleMapCanvas'
-], function($, _, Backbone, Bootstrap, Network, CommonDesign, Logger, Map){
+	'GoogleMapCanvas', 
+	'SAMonitor'
+], function($, _, Backbone, Bootstrap, Network, CommonDesign, Logger, Map, SAMonitor){
 
 	var Initialize = function () {
 
@@ -16,6 +17,9 @@ define([
 
 		Network.Initialize();
 		Network.ConnectToServer("SystemAnalyst");
+		
+		SAMonitor.Initialize();
+		SAMonitor.Log({message: "test", source: "SystemAnalyst", severity: "Debug"});
 		
 		Map.Initialize();
 
