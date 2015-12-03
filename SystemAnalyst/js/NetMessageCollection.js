@@ -3,7 +3,7 @@ define([
 	'underscore', 
 	'backbone', 
 	'NetMessageModel',
-] function($, _, Backbone, NetMessageModel) {
+], function($, _, Backbone, NetMessageModel) {
 	
 	/*
 	* Used by the SA Monitor to hold all messages sent over the network.
@@ -12,9 +12,11 @@ define([
 	var NetMessageCollection = Backbone.Collection.extend({
 		
 		//model used by this collection
-		model: NetMessageModel;
+		model: NetMessageModel
 		
 	});
 	
-}
-]);
+	//return collection object
+	return NetMessageCollection;
+	
+});

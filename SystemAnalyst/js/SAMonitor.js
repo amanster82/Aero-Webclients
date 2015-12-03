@@ -14,13 +14,27 @@ define([
 	* Initializes the SA Monitor
 	*/
 	var Initialize = function() {
-		msgCollection = new NetMessageCollection();
+		msgCollection = new NetMessageCollection({model: NetMessageModel});
 		msgView = new SAMonitorView({collection: msgCollection});
 	};
 	
+	var Log = function(msg) {
+		// do not add if message text not defined
+		if (msg.message === undefined) {
+			return;
+		}
+		
+		var message = msg.message;
+		var source = msg.source;
+		var severity = msg.severity;
+		
+		msgCollection.add({message: message, source: source, severity: severity});
+	}
+	
 	//return SA Monitor object
 	return {
-		Initialize: Initialize
+		Initialize: Initialize,
+		Log: Log
 	};
 
 });

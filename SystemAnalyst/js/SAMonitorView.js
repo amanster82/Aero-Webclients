@@ -2,8 +2,9 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
-	'LogMessageView'
-], function($, _, Backbone, LogMessageView){
+	'SAMessageView',
+	'NetMessageModel'
+], function($, _, Backbone, SAMessageView, NetMessageModel){
 
 
 	// Whether to show certain messages
@@ -23,13 +24,16 @@ define([
 		
 		initialize: function() {
 			//listen for new messages in the collection
-			this.listenTo(this.collection, "add", add);
+			this.listenTo(this.collection, "add", this.add);
 		},
 		
 		add: function(newMessage) {
 			//check that the message is displayed and exists
 			if (newMessage.get("display") === true && newMessage.get("message") !== undefined) {
-				//add message view here
+				
+				var view = new SAMessageView({model: NetMessageModel});
+				this.$el.append(view.render().el); //append message to div
+				
 			}
 		}
 	});

@@ -17,7 +17,7 @@ define([
 
 		// Default values if they aren't provided during initialization of the object
 		defaults: {
-			source: Network.ClientTypeEnum.Unknown;
+			source: "SystemAnalyst",
 			severity: 'debug',
 			timestamp: _.now(),
 			display: true

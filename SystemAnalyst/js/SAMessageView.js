@@ -3,13 +3,15 @@ require([
 	'underscore',
 	'backbone',	
 	'Util'
-] function($, _, Backbone) {
+], function($, _, Backbone, Util) {
 	
 	/*
 	* View used for displaying log messages in the SA monitor.
 	* #extends Backbone.View
 	*/
-	var SAMessageView = Backbone.View.Extend({
+	var SAMessageView = Backbone.View.extend({
+		
+		tagName: "div",
 	
 		initialize: function() {
 			//listen for changes to message data
@@ -18,7 +20,7 @@ require([
 		
 		render: function() {
 			//TODO: format message HTML
-			var msgFormat = JSON.stringify(this.model);
+			var msgFormat = "<div>[" + this.model.get("timestamp") + "] " + this.model.get("message") + "</div>";
 			
 			//change message in UI
 			this.$el.html(msgFormat);
@@ -27,5 +29,8 @@ require([
 		}
 	
 	});
+	
+	//return view object
+	return SAMessageView;
 	
 });
