@@ -288,7 +288,7 @@ input[id='success']:checked + label {
 	padding-left: 10px;
 }
 
-#sa-monitor {
+#logger-view {
 	max-height: 550px;
 	text-align: left;
 }

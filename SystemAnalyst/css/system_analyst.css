@@ -124,8 +124,8 @@ div.sidebar-right ul li:hover ul {
 }
 
 /*Log Area*/
-#logger-view {
-	min-height: 93%;
+#sa-monitor {
+	min-height: 90%;
 	border: 1px solid rgba(0, 0, 0, 0.20)
 }
 
