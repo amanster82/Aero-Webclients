@@ -125,8 +125,14 @@ div.sidebar-right ul li:hover ul {
 
 /*Log Area*/
 #sa-monitor {
-	min-height: 90%;
-	border: 1px solid rgba(0, 0, 0, 0.20)
+	height: 90%;
+	border: 1px solid rgba(0, 0, 0, 0.20);
+    overflow-y: scroll;
+}
+
+div.sa-msg {
+    min-height: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
 }
 
 #log-footer1 {

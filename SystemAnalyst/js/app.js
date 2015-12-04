@@ -20,7 +20,7 @@ define([
 		
 		SAMonitor.Initialize();
 		SAMonitor.Log({message: "test"});
-		
+
 		Map.Initialize();
 
 		console.log("All systems go");

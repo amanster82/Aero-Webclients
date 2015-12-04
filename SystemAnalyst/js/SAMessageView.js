@@ -16,12 +16,13 @@ define([
 	
 		initialize: function() {
 			//listen for changes to the model
-			//this.listenTo(this.model, "change", this.render);
+			this.listenTo(this.model, "change", this.render);
 		}, 
 		
 		render: function() {
 			//TODO: format message HTML
-			var msgFormat = "<div>[" + this.model.get("timestamp") + "] " + this.model.get("message") + "</div>";
+			var msgFormat = "<div class=\"sa-msg\">[" + Util.FormatTimestamp(this.model.get("timestamp")) + "] "
+					+ this.model.get("message") + "</div>";
 			
 			//change message in UI
 			this.$el.html(msgFormat);
