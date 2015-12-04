@@ -31,7 +31,7 @@ define([
 			//check that the message is displayed and exists
 			if (newMessage.get("display") === true && newMessage.get("message") !== undefined) {
 				
-				var view = new SAMessageView({model: NetMessageModel});
+				var view = new SAMessageView({model: newMessage});
 				this.$el.append(view.render().el); //append message to div
 				
 			}

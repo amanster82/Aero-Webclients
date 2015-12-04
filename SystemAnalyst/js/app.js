@@ -19,7 +19,7 @@ define([
 		Network.ConnectToServer("SystemAnalyst");
 		
 		SAMonitor.Initialize();
-		SAMonitor.Log({message: "test", source: "SystemAnalyst", severity: "Debug"});
+		SAMonitor.Log({message: "test"});
 		
 		Map.Initialize();
 
