@@ -1,4 +1,4 @@
-require([
+define([
 	'jquery', 
 	'underscore',
 	'backbone',	
@@ -11,10 +11,11 @@ require([
 	*/
 	var SAMessageView = Backbone.View.extend({
 		
+		//tag to use
 		tagName: "div",
 	
 		initialize: function() {
-			//listen for changes to message data
+			//listen for changes to the model
 			this.listenTo(this.model, "change", this.render);
 		}, 
 		
