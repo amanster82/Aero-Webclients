@@ -141,6 +141,7 @@ span.sa-msg-src {
 }
 
 span.sa-msg-severity {
+	font-weight: bold;
 	color: rgba(0, 0, 0, 0.6);
 	text-align: center;
 }
