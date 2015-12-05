@@ -19,7 +19,12 @@ define([
 		Network.ConnectToServer("SystemAnalyst");
 		
 		SAMonitor.Initialize();
-		SAMonitor.Log({message: "test"});
+		
+		// SA monitor test messages
+		SAMonitor.Log({message: "Test critical message.", severity:"critical"});
+		SAMonitor.Log({message: "Test warning message.", severity:"warning"});
+		SAMonitor.Log({message: "Test success message.", severity:"success"});
+		SAMonitor.Log({message: "Test debug message.", severity:"debug"});
 
 		Map.Initialize();
 

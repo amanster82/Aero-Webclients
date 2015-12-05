@@ -135,6 +135,41 @@ div.sa-msg {
     border: 1px solid rgba(0, 0, 0, 0.10);
 }
 
+span.sa-msg-src {
+	font-weight: bold;
+	text-align: center;
+}
+
+span.sa-msg-severity {
+	color: rgba(0, 0, 0, 0.6);
+	text-align: center;
+}
+
+.critical { /*SA Message Severity Colors*/
+	background-color: rgba(240, 20, 60, 0.5);
+}
+.warning {
+	background-color: rgba(255, 255, 0, 0.5);
+}
+.success {
+	background-color: rgba(144, 238, 144, 0.5);
+}
+.debug {
+	background-color: rgba(173, 216, 230, 0.5);
+}
+
+td.sa-msg-info {
+	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+	width: 100px;
+}
+
+td.sa-msg-text {
+	padding: 8px;
+	width: 100%;
+}
+
 #log-footer1 {
 	position: fixed;
     right: 0px;
