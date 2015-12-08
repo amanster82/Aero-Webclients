@@ -21,10 +21,10 @@ define([
 		SAMonitor.Initialize();
 		
 		// SA monitor test messages
-		SAMonitor.Log({message: "Test critical message.", severity:"critical"});
-		SAMonitor.Log({message: "Test warning message.", severity:"warning"});
-		SAMonitor.Log({message: "Test success message.", severity:"success"});
-		SAMonitor.Log({message: "Test debug message.", severity:"debug"});
+		SAMonitor.Log({message: "Sample critical message", severity:"critical"});
+		SAMonitor.Log({message: "Sample warning message", severity:"warning"});
+		SAMonitor.Log({message: "Sample success message", severity:"success"});
+		SAMonitor.Log({message: "Sample debug message", severity:"debug"});
 
 		Map.Initialize();
 

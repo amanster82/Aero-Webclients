@@ -21,7 +21,7 @@ define([
 		
 		render: function() {
 			//TODO: format message HTML
-			var msgFormat = "<div class=\"sa-msg " + this.model.get("severity") + "\"><table><td class=\"sa-msg-info\"><span class=\"sa-msg-src\">" + this.model.get("source") + 
+			var msgFormat = "<div class=\"sa-msg\"><table class=\"sa-msg\"><td class=\"sa-msg-color " + this.model.get("severity") + "\"></td><td class=\"sa-msg-info\"><span class=\"sa-msg-src\">" + this.model.get("source") + 
 				"<br></span><span class=\"sa-msg-severity\">[" + this.model.get("severity").toUpperCase() + "]</span></td>" + 
 					"<td class=\"sa-msg-text\"><b>[" + Util.FormatTimestamp(this.model.get("timestamp")) + "]:</b> "
 						+ this.model.get("message") + "</td></div>";
