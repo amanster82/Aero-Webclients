@@ -49,12 +49,20 @@
 			<div id="msg-toggle" class="sidebar-group">
 				<!--LOG SEVERITY FILTERS-->
 				<div id="severity-toggle" class="row">
-					<ul>
-						<li> <label><input class="filter-button filter-critical" type="checkbox" id="filter-critical">CRITICAL</label>
-						<li> <label><input class="filter-button filter-warning" type="checkbox" id="filter-warning">WARN</label>
-						<li> <label><input class="filter-button filter-success" type="checkbox" id="filter-success">SUCCESS</label>
-						<li> <label><input class="filter-button filter-debug" type="checkbox" id="filter-debug">DEBUG</label>
-					</ul>
+					<table>
+						<td class="switch-box">
+							<input class="critical" type="checkbox"><label>CRITICAL</label>
+						</td>
+						<td class="switch-box">
+							<input class="warning" type="checkbox"><label>WARN</label>
+						</td>
+						<td class="switch-box">
+							<input class="success" type="checkbox"><label>SUCCESS</label>
+						</td>
+						<td class="switch-box">
+							<input class="debug" type="checkbox"><label>DEBUG</label>
+						</td>
+					</table>
 				</div>
 			</div>
 			<div id="ac-info" class="sidebar-group">

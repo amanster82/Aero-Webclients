@@ -31,6 +31,10 @@ div.sidebar-wrapper ul li{
 	text-align: center;
 }
 
+#severity-toggle {
+	padding-left: 20px;
+}
+
 div.sidebar-right ul {
   text-align: left;
   display: inline;
