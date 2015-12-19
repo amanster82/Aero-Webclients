@@ -51,19 +51,19 @@
 				<div id="system-status" class="row">
 					<table>
 						<tr>
-							<td><input type="checkbox"><label>Datacenter</label></td>
+							<td><input type="checkbox" id="dc-toggle"><label for="dc-toggle">Datacenter</label></td>
 						</tr>
 						<tr>
-							<td><input type="checkbox"><label>Antenna Tracker</label></td>
+							<td><input type="checkbox" id="at-toggle"><label for="at-toggle">Antenna Tracker</label></td>
 						</tr>
 						<tr>
-							<td><input type="checkbox"><label>UAV</label></td>
+							<td><input type="checkbox" id="uav-toggle"><label for="uav-toggle">UAV</label></td>
 						</tr>
 						<tr>
-							<td><input type="checkbox"><label>Web Clients</label></td>
+							<td><input type="checkbox" id="wc-toggle"><label for="wc-toggle">Web Clients</label></td>
 						</tr>
 						<tr>
-							<td><input type="checkbox"><label>Image Processing</label></td>
+							<td><input type="checkbox" id="ip-toggle"><label for="ip-toggle">Image Processing</label></td>
 						</tr>
 					</table>
 				</div>
@@ -71,16 +71,16 @@
 				<div id="severity-toggle" class="row">
 					<table>
 						<td class="switch-box">
-							<input class="sa-msg-filter" id="sa-critical" type="checkbox"><label>CRIT</label>
+							<input class="sa-msg-filter" id="sa-critical" type="checkbox" checked><label for="sa-critical">CRIT</label>
 						</td>
 						<td class="switch-box">
-							<input class="sa-msg-filter" id="sa-warning" type="checkbox"><label>WARN</label>
+							<input class="sa-msg-filter" id="sa-warning" type="checkbox" checked><label for="sa-warning">WARN</label>
 						</td>
 						<td class="switch-box">
-							<input class="sa-msg-filter" id="sa-success" type="checkbox"><label>SUCC</label>
+							<input class="sa-msg-filter" id="sa-success" type="checkbox" checked><label for="sa-success">SUCC</label>
 						</td>
 						<td class="switch-box">
-							<input class="sa-msg-filter" id="sa-debug" type="checkbox"><label>DBUG</label>
+							<input class="sa-msg-filter" id="sa-debug" type="checkbox" checked><label for="sa-debug">DBUG</label>
 						</td>
 					</table>
 				</div>
