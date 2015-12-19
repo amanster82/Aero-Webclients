@@ -107,7 +107,6 @@ div.sidebar-right ul li:hover ul {
 }
 
 /*SA Monitor Filter Buttons*/
-
 input[id='sa-debug']:checked + label {
        background-image: none;
     outline: 0;
@@ -148,18 +147,10 @@ input[id='sa-success']:checked + label {
 	border-color: rgba(0, 99, 19, 1);
 }
 
-#system-status{
-	text-align: center;
-}
-
 #msg-toggle {
 	display: inline-block;
-	width: 90%;
-	text-align:center;
-}
-
-#msg-toggle table {
-	width: 50%;
+	text-align: center;
+	padding-left: 0px;
 }
 
 #msg-toggle label {

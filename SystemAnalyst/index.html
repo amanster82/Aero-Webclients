@@ -48,42 +48,38 @@
 		<div id="sidebar" class="sidebar-wrapper">
 			<div id="msg-toggle" class="sidebar-group">
 				<!--System status info + filter toggles-->
-				<div id="system-status" class="row">
-					<table>
-						<tr>
-							<td><input type="checkbox" id="dc-toggle"><label for="dc-toggle">Datacenter</label></td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" id="at-toggle"><label for="at-toggle">Antenna Tracker</label></td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" id="uav-toggle"><label for="uav-toggle">UAV</label></td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" id="wc-toggle"><label for="wc-toggle">Web Clients</label></td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" id="ip-toggle"><label for="ip-toggle">Image Processing</label></td>
-						</tr>
-					</table>
-				</div>
-				<!--LOG SEVERITY FILTERS-->
-				<div id="severity-toggle" class="row">
-					<table>
-						<td class="switch-box">
-							<input class="sa-msg-filter" id="sa-critical" type="checkbox" checked><label for="sa-critical">CRIT</label>
-						</td>
-						<td class="switch-box">
-							<input class="sa-msg-filter" id="sa-warning" type="checkbox" checked><label for="sa-warning">WARN</label>
-						</td>
-						<td class="switch-box">
-							<input class="sa-msg-filter" id="sa-success" type="checkbox" checked><label for="sa-success">SUCC</label>
-						</td>
-						<td class="switch-box">
-							<input class="sa-msg-filter" id="sa-debug" type="checkbox" checked><label for="sa-debug">DBUG</label>
-						</td>
-					</table>
-				</div>
+				<table class="sa-toggle-group">
+					<tr>
+						<td colspan="4"><input type="checkbox" class="sa-sys-toggle" id="dc-toggle"><label for="dc-toggle">Datacenter</label></td>
+					</tr>
+					<tr>
+						<td colspan="4"><input type="checkbox" class="sa-sys-toggle" id="at-toggle"><label for="at-toggle">Antenna Tracker</label></td>
+					</tr>
+					<tr>
+						<td colspan="4"><input type="checkbox" class="sa-sys-toggle" id="uav-toggle"><label for="uav-toggle">UAV</label></td>
+					</tr>
+					<tr>
+						<td colspan="4"><input type="checkbox" class="sa-sys-toggle" id="wc-toggle"><label for="wc-toggle">Web Clients</label></td>
+					</tr>
+					<tr>
+						<td colspan="4"><input type="checkbox" class="sa-sys-toggle" id="ip-toggle"><label for="ip-toggle">Image Processing</label></td>
+					</tr>
+					<!--SA Severity Switches-->
+					<tr>
+					<td class="switch-box">
+						<input class="sa-msg-filter" id="sa-critical" type="checkbox" checked><label for="sa-critical">CRIT</label>
+					</td>
+					<td class="switch-box">
+						<input class="sa-msg-filter" id="sa-warning" type="checkbox" checked><label for="sa-warning">WARN</label>
+					</td>
+					<td class="switch-box">
+						<input class="sa-msg-filter" id="sa-success" type="checkbox" checked><label for="sa-success">SUCC</label>
+					</td>
+					<td class="switch-box">
+						<input class="sa-msg-filter" id="sa-debug" type="checkbox" checked><label for="sa-debug">DBUG</label>
+					</td>
+					</tr>
+				</table>
 			</div>
 			<div id="ac-info" class="sidebar-group">
 				<div class="col-md-5" id="attitude-wrapper">
