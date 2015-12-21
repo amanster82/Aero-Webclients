@@ -8,10 +8,20 @@ define([
 
 
 	// Whether to show certain messages
-	var ShowWarnings = true,
-		ShowCritical = true,
-		ShowDebug = true,
-		ShowSuccess = true;
+	var MsgVis = {
+		//severity
+		"Critical": true, 
+		"Warning": true, 
+		"Success": true, 
+		"Debug": true, 
+
+		//systems
+		"DC": true, 
+		"AT": true,
+		"UAV": true, 
+		"WC": true, 
+		"IP": true
+	};
 
 	/**
 	  * System Analyst Monitor view - gets messages sent over our
@@ -21,7 +31,7 @@ define([
 	var SAMonitorView = Backbone.View.extend({
 
 		el: "#sa-monitor",
-		
+
 		initialize: function() {
 			//listen for new messages in the collection
 			this.listenTo(this.collection, "add", this.add);
