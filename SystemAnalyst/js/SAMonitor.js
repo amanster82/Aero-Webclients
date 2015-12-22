@@ -18,8 +18,8 @@ define([
 		msgView = new SAMonitorView({collection: msgCollection});
 
 		//listen for toggle button events
-		$('.sa-sev-toggle').on('click', msgView.toggleMsg);
-		$('.sa-sys-toggle').on('click', msgView.toggleMsg);
+		$('.sa-sev-toggle').on('click', msgView.toggleSev);
+		$('.sa-sys-toggle').on('click', msgView.toggleSys);
 	};
 	
 	var Log = function(msg) {

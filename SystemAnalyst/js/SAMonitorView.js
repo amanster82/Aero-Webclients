@@ -47,8 +47,26 @@ define([
 			}
 		},
 
-		toggleMsg: function(ev) {
-			console.log(ev.target.id);
+		toggleSev: function(ev) {
+			
+			//name of severity to be toggled
+			target = ev.target.id.split("-")[1];
+			console.log(target);
+
+			//toggle display variable for target
+			MsgVis[target] = !MsgVis[target];
+			val = MsgVis[target] //current display value
+			console.log(MsgVis[target]);
+
+			//ISSUE: collection is returning undefined
+			this.collection.each(function(msg) {
+				if (msg.get("severity") == target) {
+					msg.get("display") = val;
+				}
+			});
+		},
+
+		toggleSys: function(ev) {
 		}
 	});
 
