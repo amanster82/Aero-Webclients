@@ -16,6 +16,10 @@ define([
 	var Initialize = function() {
 		msgCollection = new NetMessageCollection({model: NetMessageModel});
 		msgView = new SAMonitorView({collection: msgCollection});
+
+		//listen for toggle button events
+		$('.sa-sev-toggle').on('click', msgView.toggleMsg);
+		$('.sa-sys-toggle').on('click', msgView.toggleMsg);
 	};
 	
 	var Log = function(msg) {

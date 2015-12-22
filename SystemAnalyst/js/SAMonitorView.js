@@ -10,17 +10,17 @@ define([
 	// Whether to show certain messages
 	var MsgVis = {
 		//severity
-		"Critical": true, 
-		"Warning": true, 
-		"Success": true, 
-		"Debug": true, 
+		"critical": true, 
+		"warning": true, 
+		"success": true, 
+		"debug": true, 
 
 		//systems
-		"DC": true, 
-		"AT": true,
-		"UAV": true, 
-		"WC": true, 
-		"IP": true
+		"dc": true, 
+		"at": true,
+		"uav": true, 
+		"wc": true, 
+		"ip": true
 	};
 
 	/**
@@ -45,6 +45,10 @@ define([
 				this.$el.append(view.render().el); //append message to div
 				
 			}
+		},
+
+		toggleMsg: function(ev) {
+			console.log(ev.target.id);
 		}
 	});
 
