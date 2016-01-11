@@ -16,11 +16,11 @@ define([
 		"debug": true, 
 
 		//systems
-		"dc": true, 
-		"at": true,
-		"uav": true, 
-		"wc": true, 
-		"ip": true
+		"DC": true, 
+		"AntennaTracker": true,
+		"UAV": true, 
+		"WebClients": true, 
+		"IP": true
 	};
 
 	// function to determine whether or not message is displayed
@@ -83,7 +83,7 @@ define([
 
 			//toggle display variable for target
 			MsgVis[target] = !MsgVis[target];
-			var val = MsgVis[target] //current display value
+			var val = MsgVis[target]; //current display value
 			console.log(MsgVis[target]);
 
 			this.collection.each(function(msg) {
@@ -96,6 +96,23 @@ define([
 		},
 
 		toggleSys: function(ev) {
+			
+			//get system to be toggled
+			var target = ev.target.id.split("-")[1];
+			console.log(target);
+
+			//flip target display variable
+			MsgVis[target] = !MsgVis[target];
+			var val = MsgVis[target];
+			console.log(val);
+
+			this.collection.each(function(msg) {
+				if (msg.get("source") == target) {
+					msg.set({"display" : val});
+				}
+			});
+
+			this.render();
 		}
 	});
 

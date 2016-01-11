@@ -25,6 +25,7 @@ define([
 		SAMonitor.Log({message: "Sample warning message", severity:"warning"});
 		SAMonitor.Log({message: "Sample success message", severity:"success"});
 		SAMonitor.Log({message: "Sample debug message", severity:"debug"});
+		SAMonitor.Log({message: "Antenna Tracker message", source: "AntennaTracker"});
 
 		Map.Initialize();
 
