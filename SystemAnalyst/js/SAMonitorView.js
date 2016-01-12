@@ -106,6 +106,21 @@ define([
 			var val = MsgVis[target];
 			console.log(val);
 
+			//special case: web clients
+			if (target == "WebClients") {
+				var wc = ["ImageAnalyst", "SystemAnalyst", "Recon", "Spectator", "Judge"]; //enum [3, 7]
+
+				//toggle display if source is any of the above values
+				this.collection.each(function(msg) {
+					if ($.inArray(msg.get("source"), wc) > -1) {
+						msg.set({"display" : val});
+					}
+				});
+
+				this.render();
+				return;
+			}
+
 			this.collection.each(function(msg) {
 				if (msg.get("source") == target) {
 					msg.set({"display" : val});
