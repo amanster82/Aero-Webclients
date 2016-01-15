@@ -23,6 +23,9 @@ define([
 		"IP": true
 	};
 
+	//CONSTANT: Web Client IDs
+	var wc = ["ImageAnalyst", "SystemAnalyst", "Recon", "Spectator", "Judge"]; //enum [3, 7]
+
 	// function to determine whether or not message is displayed
 	var toBeDisplayed = function(msg) {
 		return !(msg.get("message") == undefined) && msg.get("display") == true;
@@ -70,7 +73,6 @@ define([
 
 			//clear and add HTML chunk to view
 			this.$el.html("").append(mhtml);
-			console.log(this.$el.html);
 
 			return this; //return view object
 		},
@@ -79,16 +81,24 @@ define([
 
 			//name of severity to be toggled
 			var target = ev.target.id.split("-")[1];
-			console.log(target);
 
-			//toggle display variable for target
-			MsgVis[target] = !MsgVis[target];
-			var val = MsgVis[target]; //current display value
-			console.log(MsgVis[target]);
+			//whether system is being turned on or off
+			var checked = document.getElementById(ev.target.id).checked;
 
 			this.collection.each(function(msg) {
 				if (msg.get("severity") == target) {
-					msg.set({"display" : val});
+
+					//determine source element
+					var src = "sa-";
+					if ($.inArray(msg.get("source"), wc) > -1) {
+						//source is a web client
+						src = src + "WebClients";
+					} else {
+						//everything else
+						src = src + msg.get("source");
+					}
+
+					msg.set({"display" : checked && document.getElementById(src).checked});
 				}
 			});
 
@@ -99,21 +109,18 @@ define([
 			
 			//get system to be toggled
 			var target = ev.target.id.split("-")[1];
-			console.log(target);
 
-			//flip target display variable
-			MsgVis[target] = !MsgVis[target];
-			var val = MsgVis[target];
-			console.log(val);
+			//whether system is being turned on or off
+			var checked = document.getElementById(ev.target.id).checked;
 
 			//special case: web clients
 			if (target == "WebClients") {
-				var wc = ["ImageAnalyst", "SystemAnalyst", "Recon", "Spectator", "Judge"]; //enum [3, 7]
-
+				
 				//toggle display if source is any of the above values
 				this.collection.each(function(msg) {
 					if ($.inArray(msg.get("source"), wc) > -1) {
-						msg.set({"display" : val});
+						//messages display only if their severity and system toggles are both ON
+						msg.set({"display" : checked && document.getElementById('sa-' + msg.get("severity")).checked});
 					}
 				});
 
@@ -123,7 +130,7 @@ define([
 
 			this.collection.each(function(msg) {
 				if (msg.get("source") == target) {
-					msg.set({"display" : val});
+					msg.set({"display" : checked && document.getElementById('sa-' + msg.get("severity")).checked});
 				}
 			});
 
